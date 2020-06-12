@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&display=swap");
+@import "assets/colors.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "ABeeZee", sans-serif;
+}
+
+body {
+  height: 100%;
+  background: $background;
+}
