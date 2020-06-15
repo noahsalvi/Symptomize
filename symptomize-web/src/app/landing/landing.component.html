@@ -3,32 +3,21 @@
     <img class="logo" src="assets/Symptomize.svg" alt="" />
   </header>
   <main>
-    <section class="call-to-action">
-      <p>
-        Mit Symptomize kannst du ganz einfach und schnell ein Symptom-Profil
-        erstellen, welches du deinem Arzt oder Hausarzt zukommen lassen kannst.
-      </p>
-      <button>Profil erfassen</button>
-    </section>
-    <section class="img-container">
-      <img src="assets/medizin-grafik.svg" alt="" />
-    </section>
     <div class="parentside">
-      <div class="leftside">
+      <section class="call-to-action leftside">
         <p>
           Mit Symptomize kannst du ganz einfach und schnell ein Symptom-Profil
-          erstellen, welches du deinem Arzt oder Hausarzt zukommen lassen
-          kannst.
+          erstellen, welches du deinem Arzt oder Hausarzt zukommen lassen kannst.
         </p>
-        <button>Profil erfassen</button>
-      </div>
+        <button [routerLink]="['symp']">Profil erfassen</button>
+      </section>
       <div class="rigthside">
-        <div class="img-container">
+        <section class="img-container">
           <img src="assets/medizin-grafik.svg" alt="" />
-        </div>
-        <div class="img-container-gross">
+        </section>
+        <section class="img-container-gross">
           <img src="assets/Platzhalter_Koerper.jpg" alt="" />
-        </div>
+        </section>
       </div>
     </div>
   </main>
