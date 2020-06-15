@@ -1,16 +1,16 @@
 @import "src/assets/colors.scss";
 @media (max-width: 630px) {
   .responsive-helper {
-    height: calc(100vh - 70px);
-    display: flex;
-    flex-flow: column;
-    background: green;
+    height: calc(100vh - 90px);
   }
 
   header {
-    padding-top: 30px;
-    padding-bottom: 20px;
+    height: 100px;
+    // padding-top: 30px;
+    // padding-bottom: 20px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 
     .logo {
       width: 80%;
@@ -18,10 +18,13 @@
   }
 
   main {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
     text-align: center;
     p {
-      font-size: 24px;
-      padding: 0 40px 0 40px;
+      font-size: 3vh;
+      padding: 10px 40px 0 40px;
     }
 
     button {
@@ -31,6 +34,7 @@
       border: none;
       padding: 10px 20px;
       font-size: 24px;
+      margin-bottom: 10px;
     }
 
     .img-container {
@@ -43,11 +47,16 @@
   }
 
   footer {
-    height: 70px;
+    height: 90px;
     width: 100%;
     background: black;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
+}
+
+.gray-text {
+  color: rgb(219, 219, 219);
 }
