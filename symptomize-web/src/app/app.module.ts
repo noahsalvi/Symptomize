@@ -5,9 +5,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LandingComponent } from "./landing/landing.component";
 import { SymptomizeComponent } from './symptomize/symptomize.component';
+import { QuittungComponent } from './quittung/quittung.component';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, SymptomizeComponent],
+  declarations: [AppComponent, LandingComponent, SymptomizeComponent, QuittungComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
