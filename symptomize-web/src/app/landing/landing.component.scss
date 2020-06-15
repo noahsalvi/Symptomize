@@ -60,3 +60,83 @@
 .gray-text {
   color: rgb(219, 219, 219);
 }
+
+@media (min-width: 630px) {
+  header {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+
+    .logo {
+      width: 60%;
+    }
+  }
+
+  main {
+    height: 100%;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    background-color: $background;
+
+    .img-container {
+      display: none;
+    }
+
+    .parentside {
+      display: flex;
+      justify-content: space-between;
+      width: 75%;
+      margin: auto;
+      margin-bottom: 5%;
+      margin-top: 5%;
+
+      .rightside {
+        height: 100%;
+
+        .img-container-gross {
+          display: flex;
+          justify-content: space-between;
+          height: 100%;
+        }
+      }
+
+      .leftside {
+        padding-top: 10%;
+        height: 100%;
+
+        p {
+          font-size: 200%;
+          display: flex;
+          width: 75%;
+          margin: auto;
+        }
+
+        button {
+          margin: auto;
+          margin-top: 20px;
+          border-radius: 5px;
+          background: $green;
+          border: none;
+          padding: 10px 20px;
+          font-size: 24px;
+          display: flex;
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 70px;
+    width: 100%;
+    background: black;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
