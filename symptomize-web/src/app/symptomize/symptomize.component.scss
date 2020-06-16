@@ -14,19 +14,86 @@ canvas {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
     .section-left {
       height: 500px;
-      width: 250px;
-      background: red;
+
+      .logo {
+        width: 380px;
+      }
+
+      .tutorial {
+        margin-top: 40px;
+        width: 250px;
+        height: 500px;
+        position: relative;
+
+        .line {
+          height: 160px;
+          width: 4px;
+          position: absolute;
+          left: 22px;
+          top: 24px;
+          border-radius: 5px;
+          background: white;
+        }
+
+        #current-step {
+          position: absolute;
+          height: 48px;
+          width: 48px;
+          top: 0;
+          left: 0;
+        }
+
+        .list {
+          background: blue;
+          .step {
+            position: absolute;
+            border-radius: 60px;
+            width: 24px;
+            height: 24px;
+            left: 12px;
+            background: white;
+
+            .text {
+              position: absolute;
+              top: 0;
+              left: 60px;
+              height: 20px;
+              width: 250px;
+              font-size: 20px;
+              transform: translatey(-50%);
+            }
+
+            &:nth-child(1) {
+              //   background: purple;
+              top: 12px;
+            }
+
+            &:nth-child(2) {
+              //   background: red;
+              top: 92px;
+            }
+
+            &:nth-child(3) {
+              //   background: gray;
+              top: 172px;
+            }
+          }
+        }
+      }
     }
 
     .section-right {
-      width: 250px;
-      background: purple;
-
       .human-container {
-        height: 550px;
+        background: #0b0b0b;
+        border-radius: 20px;
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
         img {
           height: 550px;
         }
