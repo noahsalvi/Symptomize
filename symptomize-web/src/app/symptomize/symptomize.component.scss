@@ -1,0 +1,47 @@
+@import "src/assets/colors.scss";
+canvas {
+  pointer-events: none; /* make the canvas transparent to the mouse - needed since canvas is position infront of image */
+  position: absolute;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+  section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .section-left {
+      height: 500px;
+      width: 250px;
+      background: red;
+    }
+
+    .section-right {
+      width: 250px;
+      background: purple;
+
+      .human-container {
+        height: 550px;
+
+        img {
+          height: 550px;
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 80px;
+    background: black;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    font-size: 15px;
+  }
+}
