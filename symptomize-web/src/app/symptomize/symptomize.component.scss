@@ -9,11 +9,17 @@ canvas {
   justify-content: space-between;
   height: 100vh;
 
-  section {
+  main {
     flex-grow: 1;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+
+    section {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
 
     .section-left {
       height: 500px;
