@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuittungComponent implements OnInit {
 
+  symptome= [
+  { id: 1, koerperteil: "Hand", Symptom: ["Bluten", "Blau"]},
+  { id: 2, koerperteil: "Kopf", Symptom: ["Schnitt", "Blau"]}
+  ];
+
   constructor() { }
 
   ngOnInit() {

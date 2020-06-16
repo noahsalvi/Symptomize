@@ -1,1 +1,44 @@
-<p>quittung works!</p>
+<div class="responsive-helper">
+  <header>
+    <img class="logo" src="assets/Symptomize.svg" alt="" />
+  </header>
+  <main>
+    <section class="leftside">
+      <div *ngFor="let symp of symptome" class="Symptome">
+        <label class="Koerperteil">{{symp.koerperteil}}</label>
+
+        <img src="assets/edit-solid.svg" class="icon">
+        <img src="assets/trash-alt-solid.svg" class="icon">
+
+        <div class="abgrenzung"></div>
+
+        <ul *ngFor="let s of symp.Symptom">
+          <li class="Einzelnes-Symp">
+            {{s}}
+            <img src="assets/check-square-solid.svg" class="icon-smaller">
+          </li>
+
+        </ul>
+      </div>
+    </section>
+    <section class="rightside">
+      <div class="Symptome-hinzu">
+
+        <div>
+          <img src="assets/plus-solid.svg" class="icon" style="float: left;">
+        </div>
+        <div>
+          <label class="Koerperteil-hinzu" >Körperteil hinzufügen</label>
+        </div>
+
+        <div class="abgrenzung"></div>
+
+      </div>
+      <button> Absenden</button>
+    </section>
+  </main>
+</div>
+<footer>
+  <div>IDPA - Jouni Wüthrich, Noah Salvi</div>
+  <div class="gray-text">2020 c</div>
+</footer>

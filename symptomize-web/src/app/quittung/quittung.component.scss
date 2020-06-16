@@ -1,0 +1,123 @@
+@import "src/assets/colors.scss";
+.responsive-helper {
+  height: calc(100vh - 70px);
+}
+header {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+
+  @media(max-width:1200px){
+    .logo {
+      width: 600px;
+    }
+  }
+  @media(min-width:1200px){
+    .logo {
+      width: 1000px;
+    }
+  }
+}
+
+main {
+  text-align: center;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+
+  .leftside{
+    width: 40%;
+    .abgrenzung{
+      height: 5px;
+      background-color: $green;
+      margin-bottom: 5%;
+    }
+
+    .Symptome{
+      text-align: left;
+      margin-top: 5%;
+
+      .Koerperteil{
+        font-size: 40px;
+      }
+
+      .icon{
+        height: 35px;
+        width: auto;
+        margin-left: 1%;
+        float: right;
+
+      }
+
+      .Einzelnes-Symp{
+        list-style: none;
+        font-size: 25px;
+        margin-left: 5%;
+      }
+
+      .icon-smaller{
+        height: 20px;
+        float: right;
+        margin-right: 10%;
+      }
+    }
+  }
+  .rightside{
+    width: 40%;
+
+    .abgrenzung{
+      height: 5px;
+      background-color: $green;
+      margin-bottom: 5%;
+    }
+
+    .Symptome-hinzu{
+      margin-top: 5%;
+
+
+      .Koerperteil-hinzu{
+        font-size: 40px;
+      }
+      .icon{
+        height: 35px;
+        width: auto;
+        margin-left: 1%;
+
+      }
+    }
+    button {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 100px;
+      border-radius: 5px;
+      background: $green;
+      border: none;
+      padding: 10px 20px;
+      font-size: 24px;
+      display: flex;
+    }
+
+  }
+
+}
+
+footer {
+  height: 70px;
+  width: 100%;
+  background: black;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-bottom: 0;
+}
+
+.gray-text {
+  color: rgb(219, 219, 219);
+}
