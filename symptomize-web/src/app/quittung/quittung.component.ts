@@ -25,4 +25,7 @@ export class QuittungComponent implements OnInit {
   clickPlus(){
     this.router.navigate(['/symp']);
   }
+  clickEdit(){
+
+  }
 }
