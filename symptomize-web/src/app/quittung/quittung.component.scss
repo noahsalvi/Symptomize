@@ -31,11 +31,6 @@ main {
 
   .leftside{
     width: 40%;
-    .abgrenzung{
-      height: 5px;
-      background-color: $green;
-      margin-bottom: 5%;
-    }
 
     .Symptome{
       text-align: left;
@@ -69,25 +64,26 @@ main {
   .rightside{
     width: 40%;
 
-    .abgrenzung{
-      height: 5px;
-      background-color: $green;
-      margin-bottom: 5%;
-    }
-
     .Symptome-hinzu{
       margin-top: 5%;
-
+      width: initial;
+      align-items: center;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
 
       .Koerperteil-hinzu{
         font-size: 40px;
+        margin: auto;
       }
-      .icon{
+      .plus{
+        vertical-align: middle;
         height: 35px;
-        width: auto;
         margin-left: 1%;
-
+        margin-right: 10px;
       }
+
+
     }
     button {
       margin-left: auto;
@@ -100,9 +96,18 @@ main {
       font-size: 24px;
       display: flex;
     }
+    button:hover{
+      background: #5BC0BE;
+    }
 
   }
 
+}
+
+.abgrenzung{
+  height: 5px;
+  background-color: $green;
+  margin-bottom: 5%;
 }
 
 footer {
@@ -120,4 +125,8 @@ footer {
 
 .gray-text {
   color: rgb(219, 219, 219);
+}
+
+.hover:hover{
+  background-color: grey;
 }

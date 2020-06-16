@@ -7,8 +7,8 @@
       <div *ngFor="let symp of symptome" class="Symptome">
         <label class="Koerperteil">{{symp.koerperteil}}</label>
 
-        <img src="assets/edit-solid.svg" class="icon">
-        <img src="assets/trash-alt-solid.svg" class="icon">
+        <img src="assets/trash-alt-solid.svg" class="icon hover">
+        <img src="assets/edit-solid.svg" class="icon hover">
 
         <div class="abgrenzung"></div>
 
@@ -24,17 +24,11 @@
     <section class="rightside">
       <div class="Symptome-hinzu">
 
-        <div>
-          <img src="assets/plus-solid.svg" class="icon" style="float: left;">
-        </div>
-        <div>
-          <label class="Koerperteil-hinzu" >Körperteil hinzufügen</label>
-        </div>
-
-        <div class="abgrenzung"></div>
-
+        <img src="assets/plus-solid.svg" class="plus hover" (click)="clickPlus()">
+        <label class="Koerperteil-hinzu">Körperteil hinzufügen</label>
       </div>
-      <button> Absenden</button>
+      <div class="abgrenzung"></div>
+      <button>Absenden</button>
     </section>
   </main>
 </div>
