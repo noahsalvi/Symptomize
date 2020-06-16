@@ -39,6 +39,9 @@
 
     .img-container {
     }
+    .img-container-gross{
+      display: none;
+    }
 
     img {
       max-width: 100%;
@@ -62,6 +65,9 @@
 }
 
 @media (min-width: 630px) {
+  .responsive-helper {
+    height: calc(100vh - 70px);
+  }
   header {
     padding-top: 30px;
     padding-bottom: 20px;
@@ -69,17 +75,24 @@
     width: 80%;
     margin: auto;
 
-    .logo {
-      width: 60%;
+    @media(max-width:1200px){
+      .logo {
+        width: 600px;
+      }
+    }
+    @media(min-width:1200px){
+      .logo {
+        width: 1000px;
+      }
     }
   }
 
   main {
-    height: 100%;
     text-align: center;
     width: 80%;
-    margin: auto;
-    background-color: $background;
+    margin-left: auto;
+    margin-right: auto;
+
 
     .img-container {
       display: none;
@@ -89,9 +102,8 @@
       display: flex;
       justify-content: space-between;
       width: 75%;
-      margin: auto;
-      margin-bottom: 5%;
-      margin-top: 5%;
+      margin-left: auto;
+      margin-right: auto;
 
       .rightside {
         height: 100%;
@@ -111,11 +123,13 @@
           font-size: 200%;
           display: flex;
           width: 75%;
-          margin: auto;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         button {
-          margin: auto;
+          margin-left: auto;
+          margin-right: auto;
           margin-top: 20px;
           border-radius: 5px;
           background: $green;
@@ -129,6 +143,7 @@
   }
 
   footer {
+    position: fixed;
     height: 70px;
     width: 100%;
     background: black;
@@ -138,5 +153,6 @@
     align-items: center;
     padding-left: 3%;
     padding-right: 3%;
+    margin-bottom: 0;
   }
 }
