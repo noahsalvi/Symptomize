@@ -6,9 +6,10 @@ import { AppComponent } from "./app.component";
 import { LandingComponent } from "./landing/landing.component";
 import { SymptomizeComponent } from './symptomize/symptomize.component';
 import { QuittungComponent } from './quittung/quittung.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, SymptomizeComponent, QuittungComponent],
+  declarations: [AppComponent, LandingComponent, SymptomizeComponent, QuittungComponent, ImpressumComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
