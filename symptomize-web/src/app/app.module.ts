@@ -7,6 +7,8 @@ import { LandingComponent } from "./landing/landing.component";
 import { SymptomizeComponent } from "./symptomize/symptomize.component";
 import { QuittungComponent } from "./quittung/quittung.component";
 import { MaphilightModule } from "ng-maphilight";
+import { ImpressumComponent } from "./impressum/impressum.component";
+import { ProfilComponent } from "./profil/profil.component";
 
 @NgModule({
   declarations: [
@@ -14,6 +16,9 @@ import { MaphilightModule } from "ng-maphilight";
     LandingComponent,
     SymptomizeComponent,
     QuittungComponent,
+    QuittungComponent,
+    ImpressumComponent,
+    ProfilComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, MaphilightModule],
   providers: [],

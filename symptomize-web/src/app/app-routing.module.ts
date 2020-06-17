@@ -1,3 +1,5 @@
+import { ProfilComponent } from './profil/profil.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { LandingComponent } from "./landing/landing.component";
@@ -8,12 +10,21 @@ const routes: Routes = [
   { path: "", component: LandingComponent },
   {
     path: "symp",
-    component: SymptomizeComponent,
+    component: SymptomizeComponent
   },
   {
     path: "quittung",
-    component: QuittungComponent,
+    component: QuittungComponent
   },
+  {
+    path: "impressum",
+    component: ImpressumComponent
+  },
+  {
+    path: "profil/:id",
+    component:ProfilComponent
+  }
+
 ];
 
 @NgModule({
