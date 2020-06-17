@@ -25,7 +25,8 @@ canvas {
       height: 500px;
 
       .logo {
-        width: 380px;
+        height: 100px;
+        width: 336.9px;
       }
 
       .tutorial {
@@ -62,12 +63,16 @@ canvas {
             left: 12px;
             background: white;
 
+            &.inactive .text {
+              opacity: 0;
+            }
+
             .text {
               position: absolute;
               top: 0;
               left: 60px;
               height: 20px;
-              width: 250px;
+              width: 200px;
               font-size: 20px;
               transform: translatey(-50%);
             }
@@ -92,16 +97,25 @@ canvas {
     }
 
     .section-right {
-      .human-container {
-        background: #0b0b0b48;
-        border-radius: 20px;
+      padding: 20px;
+      background: #0b0b0b48;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
+      .human-container {
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px 40px;
+        height: 570px;
+        width: 290px;
+
         img {
           height: 550px;
+
+          transition: all 0.5s;
         }
       }
     }
