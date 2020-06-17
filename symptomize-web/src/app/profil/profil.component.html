@@ -5,20 +5,16 @@
   <main>
     <section class="leftside">
       <div *ngFor="let symp of symptome" class="Symptome">
-        <label class="Koerperteil">{{symp.koerperteil}}</label>
+        <label class="Koerperteil">{{ symp.koerperteil }}</label>
 
         <div class="abgrenzung"></div>
 
         <ul *ngFor="let s of symp.Symptom">
           <li class="Einzelnes-Symp">
-            {{s}}
+            {{ s }}
           </li>
-
         </ul>
       </div>
-    </section>
-    <section class="rightside">
-      <img src="assets/human550.png" alt="" />
     </section>
   </main>
 </div>
