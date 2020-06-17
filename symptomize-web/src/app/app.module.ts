@@ -7,9 +7,10 @@ import { LandingComponent } from "./landing/landing.component";
 import { SymptomizeComponent } from './symptomize/symptomize.component';
 import { QuittungComponent } from './quittung/quittung.component';
 import { ImpressumComponent } from './impressum/impressum.component';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, SymptomizeComponent, QuittungComponent, ImpressumComponent],
+  declarations: [AppComponent, LandingComponent, SymptomizeComponent, QuittungComponent, ImpressumComponent, ProfilComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,28 @@
+<div class="responsive-helper">
+  <header>
+    <img class="logo" src="assets/Symptomize.svg" alt="" />
+  </header>
+  <main>
+    <section class="leftside">
+      <div *ngFor="let symp of symptome" class="Symptome">
+        <label class="Koerperteil">{{symp.koerperteil}}</label>
+
+        <div class="abgrenzung"></div>
+
+        <ul *ngFor="let s of symp.Symptom">
+          <li class="Einzelnes-Symp">
+            {{s}}
+          </li>
+
+        </ul>
+      </div>
+    </section>
+    <section class="rightside">
+      <img src="assets/human550.png" alt="" />
+    </section>
+  </main>
+</div>
+<footer>
+  <div>IDPA - Jouni Wüthrich, Noah Salvi</div>
+  <div class="gray-text">2020 c</div>
+</footer>

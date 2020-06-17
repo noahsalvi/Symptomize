@@ -1,0 +1,137 @@
+@import "src/assets/colors.scss";
+//Handy
+@media (max-width: 630px) {
+  .responsive-helper {
+    height: calc(100vh - 90px);
+  }
+  header {
+    height: 100px;
+    // padding-top: 30px;
+    // padding-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    .logo {
+      width: 80%;
+    }
+  }
+
+
+  main {
+    text-align: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .Symptome {
+      text-align: left;
+      margin-top: 5%;
+
+      .Koerperteil {
+        font-size: 30px;
+      }
+
+      .Einzelnes-Symp {
+        list-style: none;
+        font-size: 15px;
+        margin-left: 5%;
+      }
+    }
+  }
+
+  .abgrenzung {
+    height: 5px;
+    background-color: $green;
+    margin-bottom: 5%;
+  }
+
+  footer {
+    height: 90px;
+    width: 100%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .rightside{
+    display: none;
+  }
+}
+
+//Desktop
+@media (min-width: 630px) {
+
+  .responsive-helper {
+    height: calc(100vh - 70px);
+  }
+  header {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    width: 80%;
+    margin: auto;
+
+    .logo {
+      width: 600px;
+    }
+  }
+
+  main {
+    text-align: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+
+    .leftside {
+      width: 40%;
+
+      .Symptome {
+        text-align: left;
+        margin-top: 5%;
+
+        .Koerperteil {
+          font-size: 40px;
+        }
+
+        .Einzelnes-Symp {
+          list-style: none;
+          font-size: 25px;
+          margin-left: 5%;
+        }
+
+      }
+    }
+    .rightside {
+      width: 40%;
+    }
+  }
+
+  .abgrenzung {
+    height: 5px;
+    background-color: $green;
+    margin-bottom: 5%;
+  }
+
+  footer {
+    height: 70px;
+    width: 100%;
+    background: black;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-bottom: 0;
+  }
+}
+.gray-text {
+  color: rgb(219, 219, 219);
+}
+
+.hover:hover {
+  background-color: grey;
+}

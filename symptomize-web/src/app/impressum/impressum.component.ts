@@ -13,7 +13,7 @@ export class ImpressumComponent implements OnInit {
   ngOnInit() {
   }
 
-  goBack(){
+  goBack() {
     this.location.back();
   }
 }

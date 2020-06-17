@@ -1,3 +1,4 @@
+import { ProfilComponent } from './profil/profil.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
@@ -18,7 +19,12 @@ const routes: Routes = [
   {
     path: "impressum",
     component: ImpressumComponent
+  },
+  {
+    path: "profil/:id",
+    component:ProfilComponent
   }
+
 ];
 
 @NgModule({

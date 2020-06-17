@@ -11,7 +11,7 @@ export class QuittungComponent implements OnInit {
 
 
 
-  symptome=  [
+  symptome =  [
   { id: 1, koerperteil: 'Hand', Symptom: ['Bluten', 'Blau']},
   { id: 2, koerperteil: 'Kopf', Symptom: ['Schnitt', 'Blau']}
   ];
