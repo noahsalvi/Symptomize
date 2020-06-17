@@ -1,14 +1,20 @@
 <div class="responsive-helper">
   <header>
-    <img class="logo" src="assets/Symptomize.svg" alt="" />
+    <div class="desktop-head">
+      <img class="logo" src="assets/Symptomize.svg" alt="" />
+    </div>
+    <div class="handy-head">
+      <img src="assets/arrow-left-solid.svg" class="icon hover" (click)="goBack()">
+      <h1>Quittung</h1>
+    </div>
   </header>
   <main>
     <section class="leftside">
       <div *ngFor="let symp of symptome" class="Symptome">
         <label class="Koerperteil">{{symp.koerperteil}}</label>
 
-        <img src="assets/trash-alt-solid.svg" class="icon hover">
-        <img src="assets/edit-solid.svg" class="icon hover" (click)="clickEdit()">
+        <img src="assets/trash-alt-solid.svg" class="icon hover" (click)="clickDelete(symp.id)">
+        <img src="assets/edit-solid.svg" class="icon hover" (click)="clickEdit(symp.id)">
 
         <div class="abgrenzung"></div>
 
