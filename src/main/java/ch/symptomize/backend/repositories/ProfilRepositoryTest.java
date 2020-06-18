@@ -17,8 +17,8 @@ public class ProfilRepositoryTest {
     private ProfilRepository profilRepository;
     @Before
     public void setUp() throws Exception{
-        Profil profil1 = new Profil("Hand : Blau", "lornriveoubv");
-        Profil profil2 = new Profil("Fuss : Bluten", "rgerbrebev");
+        Profil profil1 = new Profil("Hand : Blau");
+        Profil profil2 = new Profil("Fuss : Bluten");
         this.profilRepository.save(profil1);
         this.profilRepository.save(profil2);
         assertNotNull(profil1.getId());
@@ -28,7 +28,7 @@ public class ProfilRepositoryTest {
     @Test
     public void testFetchData() {
         /*Test data retrieval*/
-        Profil profila = profilRepository.findByURL("rgerbrebev");
+        Profil profila = profilRepository.findById(2);
         assertNotNull(profila);
         assertEquals("Fuss : Bluten", profila.getSymptome());
         /*Get all products, list should only have two*/

@@ -9,7 +9,6 @@ public class Profil {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
     private String Symptome;
-    private String URL;
 
     public Profil(){
     }
@@ -18,24 +17,17 @@ public class Profil {
         return Id;
     }
 
-    public Profil(String s, String u){
+    public Profil(String s){
         Symptome=s;
-        URL=u;
     }
 
     public String getSymptome() {
         return Symptome;
     }
 
-    public String getURL() {
-        return URL;
-    }
 
     public void setSymptome(String symptome) {
         Symptome = symptome;
     }
 
-    public void setURL(String URL) {
-        this.URL = URL;
-    }
 }
