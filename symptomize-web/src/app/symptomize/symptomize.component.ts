@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./symptomize.component.scss"],
 })
 export class SymptomizeComponent implements OnInit {
+  isFirst = true;
   config = {
     fade: true,
     alwaysOn: false,
@@ -34,9 +35,14 @@ export class SymptomizeComponent implements OnInit {
   ngOnInit() {}
 
   select(bodyPart) {
+    console.log("select ran");
     if (bodyPart == "head") {
-      document.getElementById("human").style.height = "1000px";
-      document.getElementById("human").style.transform = "translatey(390px)";
+      console.log("bodypart = head");
+      this.isFirst = false;
+      setTimeout(() => {
+        document.getElementById("human").style.height = "1000px";
+        document.getElementById("human").style.transform = "translatey(390px)";
+      }, 10);
     }
   }
 }
