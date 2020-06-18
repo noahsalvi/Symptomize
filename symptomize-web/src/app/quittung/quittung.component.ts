@@ -1,6 +1,9 @@
+import { Console } from 'console';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Location } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-quittung',
@@ -9,6 +12,7 @@ import { Location } from '@angular/common';
 })
 export class QuittungComponent implements OnInit {
 
+  public URLoutput;
 
 
   symptome =  [
@@ -16,7 +20,7 @@ export class QuittungComponent implements OnInit {
   { id: 2, koerperteil: 'Kopf', Symptom: ['Schnitt', 'Blau']}
   ];
 
-  constructor(private router: Router, private location: Location) {
+  constructor(private router: Router, private location: Location, private http: HttpClient) {
 
    }
 
@@ -32,8 +36,22 @@ export class QuittungComponent implements OnInit {
   clickDelete(id: number) {
     alert(id);
   }
+  absenden() {
+    const url = 'http://localhost:8080/saveProfil';
+    this.http.post<Observable<Text>>(url, {
+      params: {
+        Symptome: this.symptome,
+      },
+      responseType: 'text',
+    })
+    .subscribe((output) => {
+      this.URLoutput = output;
+      console.log(this.URLoutput);
+    });
+  }
   goBack() {
     alert('back');
     this.location.back();
   }
+
 }

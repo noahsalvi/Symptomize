@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ProfilComponent } from './profil/profil.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { NgModule } from "@angular/core";
@@ -28,7 +29,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), HttpClientModule,  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
