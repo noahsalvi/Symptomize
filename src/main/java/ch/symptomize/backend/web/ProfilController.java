@@ -5,6 +5,7 @@ import ch.symptomize.backend.repositories.ProfilRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 
 
 @RestController
@@ -13,6 +14,18 @@ public class ProfilController {
 
     @Autowired
     ProfilRepository profilRepository;
+
+    @GetMapping("/getProfil/{id}")
+    public String getProfil(@PathVariable String id){
+        String symptome ="";
+        System.out.println("id----" + id);
+        int ID = Integer.valueOf(id);
+        System.out.println(ID);
+        Profil p = profilRepository.findById(ID);
+        System.out.println(p.getId()+"----"+ p.getSymptome());
+        symptome = p.getSymptome();
+        return symptome;
+    }
 
     @PostMapping("/saveProfil")
     public String saveProfil(@RequestBody String symptome){
