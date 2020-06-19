@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, throwError, observable } from 'rxjs';
 
 @Component({
   selector: 'app-profil',
@@ -9,17 +11,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfilComponent implements OnInit {
 
+
+  private ID = 1;
   // Ausgabe Test
-  symptome =  [
-    { id: 1, koerperteil: 'Hand', Symptom: ['Bluten', 'Blau']},
-    { id: 2, koerperteil: 'Kopf', Symptom: ['Schnitt', 'Blau']}
-    ];
+  private Lol: any;
+  public symptome: any;
 
   private routeSub: Subscription;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
+    const url = 'http://localhost:8080/getProfil/';
     this.routeSub = this.route.params.subscribe(params => {
+      this.http.get(url + params.id)
+        .subscribe((output) => {
+          this.Lol = output;
+          this.symptome = this.Lol;
+          console.log('output');
+          console.log(this.symptome);
+        });
     });
   }
   ngOnDestroy() {
