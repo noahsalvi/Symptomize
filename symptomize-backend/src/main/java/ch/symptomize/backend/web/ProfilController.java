@@ -15,9 +15,11 @@ public class ProfilController {
     ProfilRepository profilRepository;
 
     @PostMapping("/saveProfil")
-    public String saveProfil(@RequestBody String s){
+    public String saveProfil(@RequestBody String symptome){
         String Url ;
-        Profil p = new Profil(s);
+
+        System.out.println("s----"+symptome);
+        Profil p = new Profil(symptome);
         profilRepository.save(p);
 
         Url = String.valueOf(p.getId());
