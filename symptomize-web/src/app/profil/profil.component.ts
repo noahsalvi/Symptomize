@@ -11,7 +11,7 @@ import { Observable, throwError, observable } from 'rxjs';
 })
 export class ProfilComponent implements OnInit {
 
-
+  isDataAvailable = false;
   private ID = 1;
   // Ausgabe Test
   private Lol: any;
@@ -26,9 +26,10 @@ export class ProfilComponent implements OnInit {
       this.http.get(url + params.id)
         .subscribe((output) => {
           this.Lol = output;
-          this.symptome = this.Lol;
+          this.symptome = this.Lol.symptome;
           console.log('output');
           console.log(this.symptome);
+          this.isDataAvailable = true;
         });
     });
   }
