@@ -14,7 +14,7 @@ export class QuittungComponent implements OnInit {
 
   public URLoutput;
   public urlLabeltext = 'Hier wird der Link erscheinen, wenn sie auf absenden clicken';
-
+  public showcopy = false;
 
 
   symptome = [
@@ -48,9 +48,23 @@ export class QuittungComponent implements OnInit {
           this.URLoutput = output;
           console.log(this.URLoutput);
           this.giveURL(this.URLoutput);
+          this.showcopy = true;
 
         });
     }
+  }
+  clickCopy(val: string) {
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox)
   }
   goBack() {
     alert('back');

@@ -37,6 +37,7 @@
       <button (click)="absenden()">Absenden</button>
       <div class="urllabel">
         <label >{{urlLabeltext}}</label>
+        <button *ngIf="showcopy" (click)="clickCopy(urlLabeltext)" class="copy">Copy</button>
       </div>
     </section>
   </main>
