@@ -13,6 +13,10 @@ export class ImpressumComponent implements OnInit {
   ngOnInit() {
   }
 
+  openPDF() {
+    window.open('assets/Benutzerhandbuch_Symptomize.pdf', '_blank');
+  }
+
   goBack() {
     this.location.back();
   }
