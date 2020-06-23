@@ -65,12 +65,12 @@ export class SymptomizeComponent implements OnInit {
   ngOnInit() {}
 
   selectArea(bodyArea) {
-    console.log("select ran");
     this.bodyArea = bodyArea;
-
-    console.log("bodyArea = " + bodyArea);
-    this.layer = 0;
+    let step1Text: any = document.getElementById("step-1").firstChild;
+    step1Text.innerText = this.bodyArea;
     this.updateTutorial(2);
+
+    this.layer = 0;
     setTimeout(() => {
       //needed because of bug with the transition
       document.getElementById("human-placeholder-image").style.height =
@@ -100,10 +100,10 @@ export class SymptomizeComponent implements OnInit {
   return() {
     switch (this.layer) {
       case 2: {
+        this.updateTutorial(1);
         this.layer = 0;
         document.getElementById("statesMap-2").style.display = "none";
 
-        this.updateTutorial(1);
         setTimeout(() => {
           document.getElementById("human-placeholder-image").style.height =
             this.zoomHeight + "px";
@@ -121,11 +121,13 @@ export class SymptomizeComponent implements OnInit {
             document.getElementById("human-placeholder-image").style.transform =
               "";
           }, 50);
-
+          let step1Text: any = document.getElementById("step-1").firstChild;
+          step1Text.innerText = "Klicke auf ein Körperbereich";
           setTimeout(() => {
             this.layer = 1;
           }, 500);
         });
+        break;
       }
     }
   }
@@ -144,6 +146,13 @@ export class SymptomizeComponent implements OnInit {
       case 3:
         document.getElementById("current-step").style.top = pos3;
         break;
+    }
+    if (this.layer < step) {
+      document.getElementById("step-" + (step - 1)).className = "step done";
+      document.getElementById("step-" + step).className = "step";
+    } else {
+      document.getElementById("step-" + (step + 1)).className = "step inactive";
+      document.getElementById("step-" + step).className = "step";
     }
   }
 }
