@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { SymptomService } from "../symptom.service";
 
 @Component({
   selector: "app-symptomize",
@@ -6,7 +7,36 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./symptomize.component.scss"],
 })
 export class SymptomizeComponent implements OnInit {
-  isFirst = true;
+  bodyAreaCoords = {
+    head: {
+      x: 0,
+      y: 390,
+    },
+    torso: {
+      x: 0,
+      y: 130,
+    },
+    "right-arm": {
+      x: 120,
+      y: 100,
+    },
+    "right-leg": {
+      x: 70,
+      y: -230,
+    },
+    "left-leg": {
+      x: -70,
+      y: -230,
+    },
+    "left-arm": {
+      x: -120,
+      y: 100,
+    },
+  };
+  zoomHeight = 1000;
+  bodyArea: string;
+  bodyPart: string;
+  layer: number = 1; //default layer
   config = {
     fade: true,
     alwaysOn: false,
@@ -30,19 +60,90 @@ export class SymptomizeComponent implements OnInit {
     shadowRadius: 10,
   };
 
-  constructor() {}
+  constructor(private symptomService: SymptomService) {}
 
   ngOnInit() {}
 
-  select(bodyPart) {
+  selectArea(bodyArea) {
     console.log("select ran");
-    if (bodyPart == "head") {
-      console.log("bodypart = head");
-      this.isFirst = false;
+    this.bodyArea = bodyArea;
+
+    console.log("bodyArea = " + bodyArea);
+    this.layer = 0;
+    this.updateTutorial(2);
+    setTimeout(() => {
+      //needed because of bug with the transition
+      document.getElementById("human-placeholder-image").style.height =
+        this.zoomHeight + "px";
+
+      document.getElementById("human-placeholder-image").style.transform =
+        "translate(" +
+        this.bodyAreaCoords[bodyArea].x +
+        "px, " +
+        this.bodyAreaCoords[bodyArea].y +
+        "px)";
+
       setTimeout(() => {
-        document.getElementById("human").style.height = "1000px";
-        document.getElementById("human").style.transform = "translatey(390px)";
-      }, 10);
+        this.layer = 2;
+        document.getElementById("statesMap-2").style.display = "block";
+      }, 500);
+
+      document.getElementById("statesMap-2").style.transform =
+        "translate(" +
+        this.bodyAreaCoords[bodyArea].x +
+        "px, " +
+        this.bodyAreaCoords[bodyArea].y +
+        "px)";
+    }, 50);
+  }
+
+  return() {
+    switch (this.layer) {
+      case 2: {
+        this.layer = 0;
+        document.getElementById("statesMap-2").style.display = "none";
+
+        this.updateTutorial(1);
+        setTimeout(() => {
+          document.getElementById("human-placeholder-image").style.height =
+            this.zoomHeight + "px";
+
+          document.getElementById("human-placeholder-image").style.transform =
+            "translate(" +
+            this.bodyAreaCoords[this.bodyArea].x +
+            "px, " +
+            this.bodyAreaCoords[this.bodyArea].y +
+            "px)";
+
+          setTimeout(() => {
+            document.getElementById("human-placeholder-image").style.height =
+              "";
+            document.getElementById("human-placeholder-image").style.transform =
+              "";
+          }, 50);
+
+          setTimeout(() => {
+            this.layer = 1;
+          }, 500);
+        });
+      }
+    }
+  }
+  updateTutorial(step: number) {
+    let pos1 = "";
+    let pos2 = "80px";
+    let pos3 = "160px";
+
+    switch (step) {
+      case 1:
+        document.getElementById("current-step").style.top = pos1;
+        break;
+      case 2:
+        document.getElementById("current-step").style.top = pos2;
+        break;
+      case 3:
+        document.getElementById("current-step").style.top = pos3;
+        break;
     }
   }
 }
