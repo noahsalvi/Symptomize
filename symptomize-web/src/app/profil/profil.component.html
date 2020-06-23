@@ -3,7 +3,7 @@
     <img class="logo" src="assets/Symptomize.svg" alt="" />
   </header>
   <main>
-    <section class="leftside">
+    <section class="leftside" *ngIf="isDataAvailable">
       <div *ngFor="let symp of symptome" class="Symptome">
         <label class="Koerperteil">{{ symp.koerperteil }}</label>
 
