@@ -162,19 +162,20 @@ canvas {
 
 #statesMap {
   height: 550px;
-  width: 247px;
+  width: 245px;
+  //245.4 more accurate
 
   //   bild in 1000 in gimp exportieren dann nochmal probieren, eigentlich geklappt bei human-1 layer hier auch klappen sollte
 }
 
 #statesMap-2 {
   display: none;
-  height: 1000px;
-  width: 449px;
+  height: 957px;
+  width: 427px;
 }
 
 #human-placeholder {
-  width: 247px;
+  width: 245.4px;
   height: 550px;
   display: flex;
   justify-content: center;

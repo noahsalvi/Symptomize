@@ -33,7 +33,15 @@ export class SymptomizeComponent implements OnInit {
       y: 100,
     },
   };
-  zoomHeight = 1000;
+  bodyAreaVocab = {
+    head: "Kopf",
+    "right-arm": "Rechter Arm",
+    "right-leg": "Rechtes Bein",
+    "left-leg": "Linkes Bein",
+    "left-arm": "Linker Arm",
+    torso: "Oberkörper",
+  };
+  zoomHeight = 957;
   bodyArea: string;
   bodyPart: string;
   layer: number = 1; //default layer
@@ -67,7 +75,7 @@ export class SymptomizeComponent implements OnInit {
   selectArea(bodyArea) {
     this.bodyArea = bodyArea;
     let step1Text: any = document.getElementById("step-1").firstChild;
-    step1Text.innerText = this.bodyArea;
+    step1Text.innerText = this.bodyAreaVocab[this.bodyArea];
     this.updateTutorial(2);
 
     this.layer = 0;
@@ -131,6 +139,7 @@ export class SymptomizeComponent implements OnInit {
       }
     }
   }
+
   updateTutorial(step: number) {
     let pos1 = "";
     let pos2 = "80px";
