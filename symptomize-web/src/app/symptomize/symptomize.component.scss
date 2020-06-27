@@ -153,23 +153,16 @@ canvas {
   }
 }
 
-// #human-placeholder {
-//   display: none;
-//   .active {
-//     display: block;
-//   }
-// }
-
 #statesMap {
   height: 550px;
   width: 245px;
   //245.4 more accurate
-
-  //   bild in 1000 in gimp exportieren dann nochmal probieren, eigentlich geklappt bei human-1 layer hier auch klappen sollte
 }
 
 #statesMap-2 {
-  display: none;
+  //opacity and position nötig für maphilight, sonst geht es nicht mit display none
+  opacity: 0;
+  position: absolute;
   height: 957px;
   width: 427px;
 }

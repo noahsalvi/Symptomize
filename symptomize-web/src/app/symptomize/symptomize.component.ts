@@ -40,6 +40,10 @@ export class SymptomizeComponent implements OnInit {
     "left-leg": "Linkes Bein",
     "left-arm": "Linker Arm",
     torso: "Oberkörper",
+    hand: "Hand",
+    elbow: "Ellbogen",
+    forearm: "Unterarm",
+    "upper-arm": "Oberarm",
   };
   zoomHeight = 957;
   bodyArea: string;
@@ -93,7 +97,7 @@ export class SymptomizeComponent implements OnInit {
 
       setTimeout(() => {
         this.layer = 2;
-        document.getElementById("statesMap-2").style.display = "block";
+        document.getElementById("statesMap-2").style.opacity = "1";
       }, 500);
 
       document.getElementById("statesMap-2").style.transform =
@@ -105,12 +109,20 @@ export class SymptomizeComponent implements OnInit {
     }, 50);
   }
 
+  selectPart(bodyPart) {
+    this.bodyPart = bodyPart;
+
+    let step1Text: any = document.getElementById("step-2").firstChild;
+    step1Text.innerText = this.bodyAreaVocab[this.bodyPart];
+    this.updateTutorial(3);
+  }
+
   return() {
     switch (this.layer) {
       case 2: {
         this.updateTutorial(1);
         this.layer = 0;
-        document.getElementById("statesMap-2").style.display = "none";
+        document.getElementById("statesMap-2").style.opacity = "0";
 
         setTimeout(() => {
           document.getElementById("human-placeholder-image").style.height =
@@ -137,6 +149,13 @@ export class SymptomizeComponent implements OnInit {
         });
         break;
       }
+
+      case 3: {
+        console.log("case 3");
+        this.updateTutorial(2);
+        this.layer = 2;
+        break;
+      }
     }
   }
 
@@ -156,6 +175,7 @@ export class SymptomizeComponent implements OnInit {
         document.getElementById("current-step").style.top = pos3;
         break;
     }
+
     if (this.layer < step) {
       document.getElementById("step-" + (step - 1)).className = "step done";
       document.getElementById("step-" + step).className = "step";
