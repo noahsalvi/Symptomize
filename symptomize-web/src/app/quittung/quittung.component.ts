@@ -18,8 +18,8 @@ export class QuittungComponent implements OnInit {
 
 
   symptome = [
-    { id: 1, koerperteil: 'Hand', Symptom: ['Bluten', 'Blau'] },
-    { id: 2, koerperteil: 'Kopf', Symptom: ['Schnitt', 'Blau', 'LOL'] }
+    { id: 1, Koerperarea: 'rechter-Arm', koerperteil: 'Hand', Symptom: ['Bluten', 'Blau'] },
+    { id: 2, Koerperarea: 'Kopf', koerperteil: 'Nase', Symptom: ['Schnitt', 'Blau', 'LOL'] }
   ];
 
   constructor(private router: Router, private location: Location, private http: HttpClient) {

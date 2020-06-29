@@ -11,6 +11,7 @@
   <main>
     <section class="leftside">
       <div *ngFor="let symp of symptome" class="Symptome">
+        {{symp.Koerperarea}}
         <label class="Koerperteil">{{symp.koerperteil}}</label>
 
         <img src="assets/trash-alt-solid.svg" class="icon hover" (click)="clickDelete(symp.id)">
