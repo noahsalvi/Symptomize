@@ -4,40 +4,52 @@
       <img class="logo" src="assets/Symptomize.svg" alt="" />
     </div>
     <div class="handy-head">
-      <img src="assets/arrow-left-solid.svg" class="icon" (click)="goBack()">
+      <img src="assets/arrow-left-solid.svg" class="icon" (click)="goBack()" />
       <h1>Quittung</h1>
     </div>
   </header>
   <main>
     <section class="leftside">
-      <div *ngFor="let symp of symptome" class="Symptome">
-        <label class="Koerperteil">{{symp.koerperteil}}</label>
+      <div *ngFor="let symp of symptoms" class="Symptome">
+        <label class="Koerperteil">{{ dictionary[symp.bodyPart] }}</label>
 
-        <img src="assets/trash-alt-solid.svg" class="icon hover" (click)="clickDelete(symp.id)">
-        <img src="assets/edit-solid.svg" class="icon hover" (click)="clickEdit(symp.id)">
+        <img
+          src="assets/trash-alt-solid.svg"
+          class="icon hover"
+          (click)="clickDelete(symp.id)"
+        />
+        <img
+          src="assets/edit-solid.svg"
+          class="icon hover"
+          (click)="clickEdit(symp.id)"
+        />
 
         <div class="abgrenzung"></div>
 
-        <ul *ngFor="let s of symp.Symptom">
+        <ul *ngFor="let s of symp.symptoms">
           <li class="Einzelnes-Symp">
-            {{s}}
-            <img src="assets/check-square-solid.svg" class="icon-smaller">
+            {{ s }}
+            <img src="assets/check-square-solid.svg" class="icon-smaller" />
           </li>
-
         </ul>
       </div>
     </section>
     <section class="rightside">
       <div class="Symptome-hinzu">
-
-        <img src="assets/plus-solid.svg" class="plus hover" (click)="clickPlus()">
+        <img
+          src="assets/plus-solid.svg"
+          class="plus hover"
+          (click)="clickPlus()"
+        />
         <label class="Koerperteil-hinzu">Körperteil hinzufügen</label>
       </div>
       <div class="abgrenzung"></div>
       <button (click)="absenden()">Absenden</button>
       <div class="urllabel">
-        <label >{{urlLabeltext}}</label>
-        <button *ngIf="showcopy" (click)="clickCopy(urlLabeltext)" class="copy">Copy</button>
+        <label>{{ urlLabeltext }}</label>
+        <button *ngIf="showcopy" (click)="clickCopy(urlLabeltext)" class="copy">
+          Copy
+        </button>
       </div>
     </section>
   </main>
