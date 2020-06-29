@@ -5,6 +5,7 @@
   <main>
     <section class="leftside" *ngIf="isDataAvailable">
       <div *ngFor="let symp of symptome" class="Symptome">
+        {{symp.Koerperarea}}
         <label class="Koerperteil">{{ symp.koerperteil }}</label>
 
         <div class="abgrenzung"></div>

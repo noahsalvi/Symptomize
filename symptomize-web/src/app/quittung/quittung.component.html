@@ -10,8 +10,9 @@
   </header>
   <main>
     <section class="leftside">
-      <div *ngFor="let symp of symptoms" class="Symptome">
-        <label class="Koerperteil">{{ dictionary[symp.bodyPart] }}</label>
+      <div *ngFor="let symp of symptome" class="Symptome">
+        {{ dictionary[symp.bodyarea] }}
+        <label class="Koerperteil">{{ dictionary[symp.koerperteil] }}</label>
 
         <img
           src="assets/trash-alt-solid.svg"
