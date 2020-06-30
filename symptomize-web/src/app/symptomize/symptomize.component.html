@@ -25,14 +25,18 @@
             <img src="assets/logo-no-symptomize.svg" id="current-step" />
           </div>
         </div>
+        <div (click)="validateContinuation()" id="symptom-box"></div>
+        <div (click)="continue()" id="continue-button">Weiter</div>
       </div>
       <div class="section-right">
         <div class="human-container">
           <div *ngIf="layer == 0" id="human-placeholder">
+            <img id="human-placeholder-image" src="assets/human-original.png" />
+          </div>
+          <div *ngIf="layer == 3 || layer == 2" id="human-placeholder-3">
             <img
-              id="human-placeholder-image"
+              id="human-placeholder-image-3"
               src="assets/human-original.png"
-              usemap="#image-map"
             />
           </div>
           <maphilight *ngIf="layer == 1" id="statesMap" [config]="config">
@@ -87,7 +91,7 @@
             </map>
           </maphilight>
           <maphilight
-            *ngIf="layer == 2 || layer == 0"
+            *ngIf="layer == 2 || layer == 0 || layer == 3"
             id="statesMap-2"
             [config]="config"
           >
@@ -128,6 +132,174 @@
                 alt="shoulder"
                 nohref="nohref"
               />
+              <area
+                shape="poly"
+                coords="383,466,352,473,352,481,351,500,351,510,354,522,356,536,362,560,365,564,368,564,370,562,370,559,371,543,376,568,378,572,380,572,385,572,386,571,389,574,392,575,397,574,398,570,398,564,402,565,405,564,407,561,406,504,409,506,414,512,421,513,424,512,425,506,418,498,415,492,410,490,394,474"
+                alt="left-hand"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="314,385,343,379,369,370,373,394,375,419,381,449,383,465,352,472,346,455,331,426,319,402,315,385"
+                alt="left-unterarm"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="314,384,341,379,369,369,366,352,357,328,307,337,309,363"
+                alt="left-ellbogen"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="299,209,340,206,344,223,345,254,344,256,349,272,352,295,357,327,307,336,304,321,298,301,296,270,300,254,300,232"
+                alt="left-oberarm"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="296,171,297,179,299,208,340,205,337,196,330,187,322,180,306,173"
+                alt="left-Shoulder"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="172,83,169,75,164,70,161,70,158,71,158,76,158,84,159,86,159,90,160,96,162,99,166,103,170,103,172,100,172,99"
+                alt="right-ear"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="246,84,247,83,247,79,253,70,255,69,257,70,259,72,260,78,260,83,258,89,256,93,255,97,252,101,249,100,245,100,246,83"
+                alt="left-ear"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="201,69,203,75,202,90,200,99,201,102,218,102,215,93,211,74,213,69"
+                alt="Nose"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="172,80,178,67,190,63,200,67,201,68,213,68,216,65,229,64,234,65,246,79,254,67,260,54,258,31,249,16,238,7,221,3,209,1,193,4,179,12,164,22,156,39,155,48,157,69,164,69,169,73"
+                alt="oberkopf"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="213,71,212,74,213,79,226,82,245,79,233,65,217,65,214,68"
+                alt="left-eye"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="202,74,199,67,190,64,178,68,173,80,190,82,202,78,202,75"
+                alt="right-eye"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="172,81,190,83,202,79,199,100,191,115,181,116,174,114,173,102"
+                alt="right-cheek"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="214,80,226,83,245,80,243,112,234,116,224,113,218,100"
+                alt="left-cheek"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="199,103,218,103,225,119,207,125,191,117,199,103"
+                alt="mouth"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="175,115,181,117,189,116,207,126,226,120,240,114,239,120,216,138,205,139,196,136,179,122"
+                alt="Kiefer"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="253,859,285,864,286,888,286,891,293,903,302,919,304,937,301,940,299,939,298,942,295,944,292,943,291,946,287,947,285,946,281,949,276,948,273,945,272,949,262,949,256,942,252,931,254,912,251,897,251,883,248,874,252,858"
+                alt="left-foot"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="251,702,279,710,303,703,308,732,302,779,293,804,288,839,287,863,252,857,257,845,257,810,247,773,249,727"
+                alt="left-schienbein"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="250,700,279,708,303,701,301,688,301,663,242,665,245,682,250,693"
+                alt="left-knee"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="215,517,305,508,306,588,301,620,298,633,301,662,242,664,235,632,229,597,218,554"
+                alt="left-oberschenkel"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="205,516,114,503,112,529,112,569,115,602,122,636,122,663,179,665,186,632,189,608,204,554"
+                alt="right-oberschenkel"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="121,664,179,666,177,683,172,695,170,701,139,709,119,698"
+                alt="right-knee"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="118,700,139,711,170,702,170,719,176,744,175,775,169,807,168,841,170,860,137,862,133,837,123,798,115,756,114,728,117,708"
+                alt="right-schienbein"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="137,864,170,861,175,875,172,889,170,915,173,931,168,945,164,953,157,955,153,955,152,950,148,954,142,954,140,952,136,953,133,951,133,950,128,950,126,948,126,947,123,946,122,944,122,941,122,927,138,899"
+                alt="right-foot"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="175,152,205,188,205,272,160,284,117,268,115,214,126,170"
+                alt="right-breast"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="207,272,209,188,241,147,266,163,293,170,298,209,299,254,293,273,260,286"
+                alt="left-breast"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="176,132,203,147,242,131,241,145,207,188,176,150"
+                alt="hals"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="118,274,116,295,133,338,136,369,281,368,284,338,296,303,295,274,258,289,207,274,158,286,118,271"
+                alt="untereRippen"
+                nohref="nohref"
+              />
+              <area
+                shape="poly"
+                coords="136,371,282,369,285,413,293,450,123,452,132,417,131,391"
+                alt="Bauch"
+                nohref="nohref"
+              />
             </map>
           </maphilight>
           <img
@@ -141,42 +313,6 @@
       </div>
     </section>
   </main>
-  <maphilight id="statesMap-2" [config]="config">
-    <img id="human-2" src="assets/human-original.png" usemap="#image-map-2" />
-    <map id="image-map-2" name="image-map-2">
-      <area
-        shape="poly"
-        coords="40,472,28,482,21,492,12,502,3,514,2,521,4,526,8,527,12,523,15,518,19,514,24,509,23,516,24,528,24,540,24,552,28,565,29,570,33,572,35,572,37,568,37,574,40,578,41,580,46,579,48,574,48,572,50,573,54,574,57,571,59,568,59,561,60,549,62,538,64,530,64,548,65,558,66,560,68,564,73,561,74,555,74,543,76,528,77,518,76,503,76,489,75,482,74,478,74,475,74,474"
-        alt="hand"
-        nohref="nohref"
-        title="Hand"
-      />
-      <area
-        shape="poly"
-        coords="50,369,49,365,51,369,55,372,62,375,71,376,78,377,86,377,92,376,96,374,102,372,104,368,104,357,105,351,105,344,106,338,102,337,97,336,89,335,82,334,76,334,66,336,61,336,54,338,52,341,51,352"
-        alt="ellbow"
-        nohref="nohref"
-      />
-      <area
-        shape="poly"
-        coords="40,472,40,468,41,463,43,450,45,428,47,410,47,392,48,375,49,369,53,372,61,376,70,376,79,377,89,378,98,375,102,373,101,380,101,394,99,402,97,410,91,429,86,442,81,455,75,467,73,474"
-        alt="forearm"
-        nohref="nohref"
-      />
-      <area
-        shape="poly"
-        coords="55,337,59,328,62,319,61,304,63,284,66,268,69,260,71,256,69,246,69,230,70,219,76,209,79,210,87,210,94,210,100,211,108,211,114,212,114,222,113,231,115,247,115,264,117,273,117,290,117,297,113,308,108,325,107,332,105,336,105,337,101,337,95,336,87,334,80,335,72,335,62,337,54,338"
-        alt="upper-arm"
-        nohref="nohref"
-      />
-      <area
-        shape="poly"
-        coords="114,211,116,206,119,197,122,184,124,170,122,168,113,171,102,175,94,183,88,189,82,195,77,203,75,209,80,210"
-        alt="shoulder"
-        nohref="nohref"
-      />
-    </map>
-  </maphilight>
   <footer>
     <div>IDPA - Jouni Wüthrich, Noah Salvi</div>
     <div>2020©</div>

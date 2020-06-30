@@ -37,7 +37,7 @@
       margin-bottom: 10px;
     }
 
-    .img-container-gross{
+    .img-container-gross {
       display: none;
     }
 
@@ -58,11 +58,9 @@
   }
 }
 
-
-
 @media (min-width: 630px) {
   .responsive-helper {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 80px);
   }
   header {
     padding-top: 30px;
@@ -71,17 +69,16 @@
     width: 80%;
     margin: auto;
 
-      .logo {
-        width: 600px;
-      }
+    .logo {
+      width: 600px;
     }
+  }
 
   main {
     text-align: center;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-
 
     .img-container {
       display: none;
@@ -130,7 +127,7 @@
           font-size: 24px;
           display: flex;
         }
-        button:hover{
+        button:hover {
           background: $green-hover;
         }
       }
@@ -138,21 +135,22 @@
   }
 
   footer {
-    height: 70px;
+    font-size: 15px;
+    height: 80px;
     width: 100%;
     background: black;
     bottom: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 100px;
+    padding-right: 100px;
     margin-bottom: 0;
-    div{
+    div {
       width: 33%;
       flex-grow: 1;
     }
-    .gray-text{
+    .gray-text {
       text-align: right;
     }
   }
@@ -160,7 +158,7 @@
 .gray-text {
   color: rgb(219, 219, 219);
 }
-.Impressum{
+.Impressum {
   text-decoration: underline;
   text-align: center;
   float: right;
