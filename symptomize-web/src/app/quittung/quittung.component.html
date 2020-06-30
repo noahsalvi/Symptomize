@@ -11,13 +11,13 @@
   <main>
     <section class="leftside">
       <div *ngFor="let symp of symptoms" class="Symptome">
-        {{ dictionary[symp.bodyArea] }}
+        <p class="koerperarea">{{ dictionary[symp.bodyArea] }}</p>
         <label class="Koerperteil">{{ dictionary[symp.bodyPart] }}</label>
 
         <img
           src="assets/trash-alt-solid.svg"
           class="icon hover"
-          (click)="clickDelete(symp.id)"
+          (click)="clickDelete(symp.koerperteil)"
         />
         <img
           src="assets/edit-solid.svg"

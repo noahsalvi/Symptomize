@@ -28,6 +28,11 @@
       text-align: left;
       margin-top: 5%;
 
+      .koerperarea{
+        text-decoration: underline;
+        color: $green;
+      }
+
       .Koerperteil {
         font-size: 30px;
       }
@@ -90,6 +95,11 @@
       .Symptome {
         text-align: left;
         margin-top: 5%;
+
+        .koerperarea{
+          text-decoration: underline;
+          color: $green;
+        }
 
         .Koerperteil {
           font-size: 40px;
