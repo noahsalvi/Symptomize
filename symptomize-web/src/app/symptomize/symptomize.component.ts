@@ -84,12 +84,24 @@ export class SymptomizeComponent implements OnInit {
     this.updateTutorial(2);
 
     this.layer = 0;
-    setTimeout(() => {
-      //needed because of bug with the transition
-      document.getElementById("human-placeholder-image").style.height =
-        this.zoomHeight + "px";
+    let placeholder = document.getElementById("human-placeholder");
+    placeholder.style.opacity = "1";
 
-      document.getElementById("human-placeholder-image").style.transform =
+    document.getElementById("human-placeholder-image").style.height =
+      this.zoomHeight + "px";
+
+    document.getElementById("human-placeholder-image").style.transform =
+      "translate(" +
+      this.bodyAreaCoords[bodyArea].x +
+      "px, " +
+      this.bodyAreaCoords[bodyArea].y +
+      "px)";
+
+    document.getElementById("human-placeholder-image").className =
+      "transition-on";
+
+    setTimeout(() => {
+      document.getElementById("statesMap-2").style.transform =
         "translate(" +
         this.bodyAreaCoords[bodyArea].x +
         "px, " +
@@ -98,15 +110,10 @@ export class SymptomizeComponent implements OnInit {
 
       setTimeout(() => {
         this.layer = 2;
+        document.getElementById("human-placeholder").style.opacity = "";
         document.getElementById("statesMap-2").style.opacity = "1";
+        document.getElementById("human-placeholder-image").className = "";
       }, 500);
-
-      document.getElementById("statesMap-2").style.transform =
-        "translate(" +
-        this.bodyAreaCoords[bodyArea].x +
-        "px, " +
-        this.bodyAreaCoords[bodyArea].y +
-        "px)";
     }, 50);
   }
 
@@ -232,30 +239,31 @@ export class SymptomizeComponent implements OnInit {
     switch (this.layer) {
       case 2: {
         this.updateTutorial(1);
-        this.layer = 0;
         document.getElementById("statesMap-2").style.opacity = "0";
+        document.getElementById("human-placeholder-image").style.height =
+          this.zoomHeight + "px";
+
+        document.getElementById("human-placeholder-image").style.transform =
+          "translate(" +
+          this.bodyAreaCoords[this.bodyArea].x +
+          "px, " +
+          this.bodyAreaCoords[this.bodyArea].y +
+          "px)";
+        document.getElementById("human-placeholder").style.opacity = "1";
+        this.layer = 0;
+        document.getElementById("human-placeholder-image").className =
+          "transition-on";
 
         setTimeout(() => {
-          document.getElementById("human-placeholder-image").style.height =
-            this.zoomHeight + "px";
-
+          document.getElementById("human-placeholder-image").style.height = "";
           document.getElementById("human-placeholder-image").style.transform =
-            "translate(" +
-            this.bodyAreaCoords[this.bodyArea].x +
-            "px, " +
-            this.bodyAreaCoords[this.bodyArea].y +
-            "px)";
-
-          setTimeout(() => {
-            document.getElementById("human-placeholder-image").style.height =
-              "";
-            document.getElementById("human-placeholder-image").style.transform =
-              "";
-          }, 50);
+            "";
           let step1Text: any = document.getElementById("step-1").firstChild;
           step1Text.innerText = "Klicke auf ein Körperbereich";
           setTimeout(() => {
             this.layer = 1;
+            document.getElementById("human-placeholder-image").className = "";
+            document.getElementById("human-placeholder").style.opacity = "0";
           }, 500);
         });
         break;
