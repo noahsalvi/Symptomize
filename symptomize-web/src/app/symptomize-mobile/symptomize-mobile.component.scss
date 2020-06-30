@@ -8,28 +8,15 @@ main {
   flex-direction: column;
   align-items: center;
 
-  section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
   .human-section {
     padding: 20px;
-    background: #0b0b0b48;
+    // background: #0b0b0b48;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    #current-location {
-      position: absolute;
-      top: 40px;
-      right: 40px;
-    }
-
     .human-container {
-      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -37,12 +24,35 @@ main {
       width: 290px;
       position: relative;
 
-      .return {
+      #header {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px);
         position: absolute;
-        left: 10px;
-        top: 10px;
-        height: 30px;
-        cursor: pointer;
+        top: 0;
+        width: 100vw;
+        height: 70px;
+        background: rgba(0, 0, 0, 0.781);
+        filter: blur(0.5);
+        .return {
+          position: relative;
+          left: 20px;
+          top: 20px;
+          height: 30px;
+          cursor: pointer;
+        }
+        .center-helper {
+          position: absolute;
+          top: 23px;
+          left: 50%;
+
+          #current-location {
+            position: relative;
+            font-size: 20px;
+            z-index: 2;
+            left: -50%;
+          }
+        }
       }
 
       #human {
@@ -63,12 +73,13 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    width: 100%;
     //   display: flex;
     //   align-items: center;
     //   flex-direction: column;
 
     #tutorial {
-      margin-top: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -93,7 +104,6 @@ main {
       }
 
       #step-text {
-        width: 200px;
         height: 48px;
         font-size: 20px;
         display: flex;
@@ -104,6 +114,9 @@ main {
   }
 
   .symptom-section {
+    position: absolute;
+    top: 50%;
+
     #symptom-box {
       background: black;
       margin-top: 50px;
@@ -114,6 +127,7 @@ main {
       height: 120px;
       overflow-y: auto;
       display: none;
+
       .symptom-line {
         display: flex;
         justify-content: space-evenly;

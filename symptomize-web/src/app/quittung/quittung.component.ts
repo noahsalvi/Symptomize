@@ -16,7 +16,7 @@ export class QuittungComponent implements OnInit {
   public urlLabeltext =
     "Hier wird der Link erscheinen, wenn sie auf absenden clicken";
   public showcopy = false;
-  private dictionary;
+  public dictionary;
 
   symptoms = [];
 
@@ -39,14 +39,14 @@ export class QuittungComponent implements OnInit {
     alert(id);
   }
   clickDelete(kt: string) {
-    if (confirm('Willst du ' + kt + ' wirklich löschen?')) {
-      const index = this.symptoms.findIndex(obj => obj.koerperteil === kt);
+    if (confirm("Willst du " + kt + " wirklich löschen?")) {
+      const index = this.symptoms.findIndex((obj) => obj.koerperteil === kt);
       this.symptoms.splice(index, 1);
       console.log(this.symptoms);
 
       if (this.symptoms.length === 0) {
-        alert('Es sind keine Körperteile ausgewählt');
-        this.router.navigate(['/symp']);
+        alert("Es sind keine Körperteile ausgewählt");
+        this.router.navigate(["/symp"]);
       }
     }
   }
