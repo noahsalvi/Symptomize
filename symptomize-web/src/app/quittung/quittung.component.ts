@@ -35,14 +35,23 @@ export class QuittungComponent implements OnInit {
   clickEdit(id: number) {
     alert(id);
   }
-  clickDelete(id: number) {
-    alert(id);
+  clickDelete(kt: string) {
+    if (confirm('Willst du ' + kt + ' wirklich löschen?')) {
+      const index = this.symptome.findIndex(obj => obj.koerperteil === kt);
+      this.symptome.splice(index, 1);
+      console.log(this.symptome);
+
+      if (this.symptome.length === 0) {
+        alert('Es sind keine Körperteile ausgewählt');
+        this.router.navigate(['/symp']);
+      }
+    }
   }
   absenden() {
     const url = 'http://localhost:8080/saveProfil';
     if (confirm('Bist du sicher, dass du dein Profil absenden willst?')) {
       this.http.post<Observable<Text>>(url, {
-          symptome: this.symptome
+        symptome: this.symptome
       })
         .subscribe((output) => {
           this.URLoutput = output;
