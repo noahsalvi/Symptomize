@@ -39,8 +39,10 @@ export class QuittungComponent implements OnInit {
     alert(id);
   }
   clickDelete(kt: string) {
+    console.log(kt);
     if (confirm("Willst du " + kt + " wirklich löschen?")) {
       const index = this.symptoms.findIndex((obj) => obj.koerperteil === kt);
+      console.log(index);
       this.symptoms.splice(index, 1);
       console.log(this.symptoms);
 
