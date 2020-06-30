@@ -15,7 +15,7 @@ export class ProfilComponent implements OnInit {
   private ID = 1;
   // Ausgabe Test
   private Lol: any;
-  public symptome: any;
+  public symptoms: any;
 
   private routeSub: Subscription;
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
@@ -26,9 +26,9 @@ export class ProfilComponent implements OnInit {
       this.http.get(url + params.id)
         .subscribe((output) => {
           this.Lol = output;
-          this.symptome = this.Lol.symptome;
+          this.symptoms = this.Lol.symptoms;
           console.log('output');
-          console.log(this.symptome);
+          console.log(this.symptoms);
           this.isDataAvailable = true;
         });
     });

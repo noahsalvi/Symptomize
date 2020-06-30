@@ -22,8 +22,8 @@ public class ProfilController {
         int ID = Integer.valueOf(id);
         System.out.println(ID);
         Profil p = profilRepository.findById(ID);
-        System.out.println(p.getId()+"----"+ p.getSymptome());
-        symptome = p.getSymptome();
+        System.out.println(p.getId()+"----"+ p.getSymptoms());
+        symptome = p.getSymptoms();
         return symptome;
     }
 
@@ -36,7 +36,7 @@ public class ProfilController {
         profilRepository.save(p);
 
         Url = String.valueOf(p.getId());
-        System.out.println("ID---"+p.getId()+"--Symptome----"+p.getSymptome());
+        System.out.println("ID---"+p.getId()+"--Symptome----"+p.getSymptoms());
         return Url;
     }
 }

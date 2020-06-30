@@ -30,6 +30,7 @@
     margin-left: auto;
     margin-right: auto;
 
+
     .Symptome {
       text-align: left;
       margin-top: 5%;
@@ -102,6 +103,10 @@
       margin-top: 5px;
       font-size: 20px;
     }
+    .rightside{
+
+    margin-bottom: 110px;
+    }
   }
   .urllabel {
     height: 20px;
@@ -122,6 +127,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
   }
 }
 
@@ -146,6 +154,7 @@
   }
 
   main {
+    height: fit-content;
     text-align: center;
     width: 75%;
     margin-left: auto;
@@ -155,6 +164,8 @@
 
     .leftside {
       width: 40%;
+      height: 100%;
+      margin-bottom: 100px;
 
       .Symptome {
         text-align: left;
@@ -192,6 +203,7 @@
     }
     .rightside {
       width: 40%;
+      height: 100%;
 
       .Symptome-hinzu {
         margin-top: 5%;
@@ -254,6 +266,11 @@
     align-items: center;
     padding: 0 100px;
     font-size: 15px;
+
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
   }
 }
 .gray-text {

@@ -4,13 +4,13 @@
   </header>
   <main>
     <section class="leftside" *ngIf="isDataAvailable">
-      <div *ngFor="let symp of symptome" class="Symptome">
-        {{symp.Koerperarea}}
-        <label class="Koerperteil">{{ symp.koerperteil }}</label>
+      <div *ngFor="let symp of symptoms" class="Symptome">
+        <p class="koerperarea">{{symp.bodyArea}}</p>
+        <label class="Koerperteil">{{ symp.bodyPart }}</label>
 
         <div class="abgrenzung"></div>
 
-        <ul *ngFor="let s of symp.Symptom">
+        <ul *ngFor="let s of symp.symptoms">
           <li class="Einzelnes-Symp">
             {{ s }}
           </li>
