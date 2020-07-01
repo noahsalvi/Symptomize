@@ -73,7 +73,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 100;
     width: 100%;
     //   display: flex;
     //   align-items: center;
@@ -118,7 +118,6 @@ main {
     top: 50%;
 
     #symptom-box {
-      z-index: 100;
       background: black;
       margin-top: 50px;
       border-radius: 10px;
