@@ -105,7 +105,9 @@ export class SymptomizeComponent implements OnInit {
     shadowRadius: 10,
   };
 
-  constructor(private symptomService: SymptomService, private router: Router) {}
+  constructor(private symptomService: SymptomService, private router: Router) {
+    // this.bodyAreaCoords = symptomService.bodyCoords;
+  }
 
   ngOnInit() {
     this.dictionary = this.symptomService.dictionary;

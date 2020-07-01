@@ -40,6 +40,8 @@ export class SymptomizeMobileComponent implements OnInit {
   };
 
   constructor(private symptomService: SymptomService, private router: Router) {
+    this.bodyAreaCoords = symptomService.bodyCoords;
+
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit credit https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
     let vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
@@ -54,7 +56,6 @@ export class SymptomizeMobileComponent implements OnInit {
 
   ngOnInit() {
     this.dictionary = this.symptomService.dictionary;
-    this.bodyAreaCoords = this.symptomService.bodyCoords;
   }
 
   selectArea(bodyArea) {
