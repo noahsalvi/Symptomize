@@ -93,6 +93,6 @@ export class QuittungComponent implements OnInit {
     this.location.back();
   }
   giveURL(url: Text) {
-    this.urlLabeltext = "http://localhost:4200/profil/" + url;
+    this.urlLabeltext = "http://localhost:8080/profile/" + url;
   }
 }
