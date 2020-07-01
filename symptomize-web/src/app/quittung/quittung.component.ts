@@ -69,6 +69,7 @@ export class QuittungComponent implements OnInit {
           console.log(this.URLoutput);
           this.giveURL(this.URLoutput);
           this.showcopy = true;
+          document.getElementById("absenden-button").className = "done";
         });
     }
   }

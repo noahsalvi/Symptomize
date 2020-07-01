@@ -16,6 +16,8 @@
       margin-right: 35px;
     }
     .icon {
+      position: relative;
+      top: 5px;
       height: 35px;
       width: auto;
       margin-left: 1%;
@@ -125,6 +127,12 @@
     margin-bottom: 5%;
   }
 
+  .abgrenzung-hinzu {
+    height: 5px;
+    background-color: $green;
+    margin-bottom: 5%;
+  }
+
   footer {
     height: 90px;
     width: 100%;
@@ -161,20 +169,21 @@
   }
 
   main {
-    height: fit-content;
+    margin-top: 50px;
     text-align: center;
-    width: 75%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
     .leftside {
-      width: 55%;
-      height: 70vh;
-      overflow: auto;
+      width: 300px;
+      margin-right: 100px;
+      height: 65vh;
+      overflow-y: auto;
 
       .Symptome {
+        width: 300px;
         text-align: left;
         margin-top: 5%;
         margin-right: 5px;
@@ -189,6 +198,8 @@
         }
 
         .icon {
+          position: relative;
+          top: 5px;
           height: 25px;
           width: auto;
           margin-left: 1%;
@@ -210,40 +221,50 @@
       }
     }
     .rightside {
-      width: 40%;
-      height: 100%;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.219);
+      border-radius: 8px;
+      padding: 20px;
 
       .Symptome-hinzu {
-        margin-top: 8%;
-        width: initial;
         align-items: center;
         text-align: left;
         display: flex;
         justify-content: space-between;
-
+        cursor: pointer;
         .Koerperteil-hinzu {
-          font-size: 40px;
+          font-size: 30px;
           margin: auto;
         }
         .plus {
           vertical-align: middle;
-          height: 35px;
+          height: 30px;
           margin-left: 1%;
           margin-right: 10px;
           border-radius: 2px;
         }
       }
       button {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 100px;
+        cursor: pointer;
+        margin-top: 50px;
         border-radius: 5px;
         background: $green;
         border: none;
         padding: 10px 20px;
-        font-size: 24px;
+        font-size: 20px;
         display: flex;
+        justify-content: center;
+        align-items: center;
         transition: transform 0.2s;
+
+        &.done {
+          pointer-events: none;
+          filter: contrast(0.5);
+        }
       }
       button:hover {
         transform: scale(1.04);
@@ -256,14 +277,40 @@
     }
   }
   .urllabel {
-    height: 20px;
-    width: 100%;
-    margin-top: 20px;
+    text-align: center;
+    width: 220px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    label {
+      width: fit-content;
+      margin-right: 10px;
+    }
+    .copy {
+      font-size: 16px !important;
+      padding: 10px 15px !important;
+      &:hover {
+        transform: none !important;
+      }
+      &:active {
+        transform: scale(1.06) !important;
+      }
+    }
   }
   .abgrenzung {
     height: 5px;
+    width: 300px;
     background-color: $green;
     margin-bottom: 5%;
+    border-radius: 5px;
+  }
+
+  .abgrenzung-hinzu {
+    margin-top: 5px;
+    height: 5px;
+    width: 250px;
+    background-color: $green;
+    border-radius: 5px;
   }
 
   footer {
@@ -285,6 +332,6 @@
   color: rgb(219, 219, 219);
 }
 
-.hover:hover {
-  background-color: grey;
-}
+// .hover:hover {
+//   background-color: grey;
+// }
