@@ -115,6 +115,10 @@ export class SymptomService {
       x: -100,
       y: 100,
     },
+    "left-foot": {
+      x: 0,
+      y: -100
+    },
   };
   constructor() {}
 }
