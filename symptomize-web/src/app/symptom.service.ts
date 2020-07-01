@@ -116,8 +116,96 @@ export class SymptomService {
       y: 100,
     },
     "left-foot": {
-      x: 0,
+      x: -100,
+      y: -450
+    },
+    "left-shin": {
+      x: -100,
+      y: -300
+    },
+    "left-knee": {
+      x: -90,
+      y: -200
+    },
+    "left-thigh": {
+      x: -70,
       y: -100
+    },
+    "right-foot": {
+      x: 100,
+      y: -450
+    },
+    "right-shin": {
+      x: 100,
+      y: -300
+    },
+    "right-knee": {
+      x: 90,
+      y: -200
+    },
+    "right-thigh": {
+      x: 70,
+      y: -100
+    },
+    "right-breast": {
+      x: 30,
+      y: 150
+    },
+    "left-breast": {
+      x: -30,
+      y: 150
+    },
+    neck: {
+      x: 0,
+      y: 250
+    },
+    "lower-ribs": {
+      x: 0,
+      y: 100
+    },
+    stomach: {
+      x: 0,
+      y: 20
+    },
+    "right-ear": {
+      x: 30,
+      y: 390
+    },
+    "left-ear": {
+      x: -30,
+      y: 390
+    },
+    nose: {
+      x: 0,
+      y: 390
+    },
+    "upper-head": {
+      x: 0,
+      y: 430
+    },
+    "left-eye": {
+      x: -10,
+      y: 390
+    },
+    "right-eye": {
+      x: 10,
+      y: 390
+    },
+    "right-cheek": {
+      x: 10,
+      y: 380
+    },
+    "left-cheek": {
+      x: -10,
+      y: 380
+    },
+    mouth: {
+      x: 0,
+      y: 380
+    },
+    jaw: {
+      x: 0,
+      y: 370
     },
   };
   constructor() {}
