@@ -10,14 +10,14 @@ import { Router } from "@angular/router";
 })
 export class SymptomizeComponent implements OnInit {
   symptoms = [
-    "leichtes Bluten",
+    "Leichtes Bluten",
     "Starkes Bluten",
     "Stechen",
     "Schwellung",
     "Blau",
     "Verbrennung",
     "Aufgeschürft",
-    "schmerzen",
+    "Drücken",
   ];
   bodyAreaCoords;
   dictionary;
@@ -146,7 +146,7 @@ export class SymptomizeComponent implements OnInit {
         symptom +
         "<input type='checkbox'/></label></div>";
 
-      if (counter == 3) {
+      if (counter == 2) {
         newHtml += "</div>";
         counter = 0;
       }

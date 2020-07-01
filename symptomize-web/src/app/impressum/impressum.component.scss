@@ -9,18 +9,34 @@
   }
   .handy-head {
     background-color: #000000;
-    padding: 3%;
     text-align: center;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: relative;
     h1 {
-      margin-left: 35px;
-      margin-right: 35px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      flex-grow: 2;
+      font-size: 20px;
     }
     .icon {
+      cursor: pointer;
+      position: relative;
+      top: 5px;
       height: 35px;
       width: auto;
-      margin-left: 1%;
       float: left;
       border-radius: 2px;
+    }
+    .arrow {
+      margin-left: 20px;
+      position: initial;
+      top: 0;
+      height: 30px;
+      width: 30px;
+      z-index: 5;
     }
   }
 
@@ -30,13 +46,14 @@
     justify-self: center;
     text-align: center;
     p {
-      font-size: 3vh;
+      margin-top: 50px;
+      font-size: 18px;
       padding: 10px 40px 0 40px;
     }
     a {
-      font-size: 3vh;
+      font-size: 18px;
       padding: 10px 40px 0 40px;
-      color: rgb(18, 18, 110);
+      color: $green;
     }
     button {
       margin-left: auto;
@@ -45,8 +62,8 @@
       border-radius: 5px;
       background: $green;
       border: none;
-      padding: 10px 20px;
-      font-size: 24px;
+      padding: 10px 15px;
+      font-size: 15px;
       display: flex;
     }
   }

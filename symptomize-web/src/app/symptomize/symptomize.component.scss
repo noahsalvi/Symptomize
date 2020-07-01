@@ -125,18 +125,23 @@ canvas {
         // width: 250px;
         width: 330px;
         padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
         height: 120px;
         overflow-y: auto;
         display: none;
+
         .symptom-line {
           display: flex;
-          justify-content: space-evenly;
+          justify-content: space-between;
           align-items: center;
           margin-bottom: 5px;
 
           .symptom {
+            flex-grow: 1;
             display: flex;
-            justify-content: center;
+            width: 128px;
+            justify-content: flex-end;
             align-items: center;
             label {
               user-select: none;

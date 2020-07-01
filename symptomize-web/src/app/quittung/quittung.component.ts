@@ -102,7 +102,7 @@ export class QuittungComponent implements OnInit {
     // this.router.navigate(["/profil/erfassen-m"]);
   }
   giveURL(url: Text) {
-    this.urlLabeltext1 = "http://localhost:8080";
+    this.urlLabeltext1 = "https://symptomize-app.herokuapp.com";
     this.urlLabeltext2 = "/profile/" + url;
   }
 }
