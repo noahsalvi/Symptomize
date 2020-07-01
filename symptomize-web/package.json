@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -20,15 +19,12 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
-    "@babel/compat-data": "7.8.0",
     "angular": "^1.8.0",
-    "express": "^4.17.1",
     "ng-maphilight": "^1.0.1",
-    "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "typescript": "~3.5.3",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "@babel/compat-data": "7.8.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.24",
@@ -39,7 +35,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
-    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
