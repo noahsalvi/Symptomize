@@ -54,7 +54,15 @@ export class QuittungComponent implements OnInit {
 
       if (this.symptoms.length === 0) {
         alert("Es sind keine Körperteile ausgewählt");
-        this.router.navigate(["/profil/erfassen"]);
+        if (
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          )
+        ) {
+          this.router.navigate(["/profil/erfassen-m"]);
+        } else {
+          this.router.navigate(["/profil/erfassen"]);
+        }
       }
     }
   }
