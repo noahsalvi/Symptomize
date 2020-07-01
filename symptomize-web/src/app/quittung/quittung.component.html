@@ -31,16 +31,12 @@
       </div>
     </section>
     <section class="rightside">
-      <div class="Symptome-hinzu">
-        <img
-          src="assets/plus-solid.svg"
-          class="plus hover"
-          (click)="clickPlus()"
-        />
-        <label class="Koerperteil-hinzu">Körperteil hinzufügen</label>
+      <div class="Symptome-hinzu" (click)="clickPlus()">
+        <img src="assets/plus-solid.svg" class="plus hover" />
+        <div class="Koerperteil-hinzu">Körperteil<br />hinzufügen</div>
       </div>
-      <div class="abgrenzung"></div>
-      <button (click)="absenden()">Absenden</button>
+      <div class="abgrenzung-hinzu"></div>
+      <button id="absenden-button" (click)="absenden()">Absenden</button>
       <div class="urllabel">
         <label>{{ urlLabeltext }}</label>
         <button *ngIf="showcopy" (click)="clickCopy(urlLabeltext)" class="copy">
