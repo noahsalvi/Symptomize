@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { SymptomService } from "../symptom.service";
 import { Router } from "@angular/router";
 
@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
   selector: "app-symptomize-mobile",
   templateUrl: "./symptomize-mobile.component.html",
   styleUrls: ["./symptomize-mobile.component.scss"],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SymptomizeMobileComponent implements OnInit {
   symptoms = ["Bluten", "Stechen", "Schwellung", "Blau"];
@@ -123,10 +124,9 @@ export class SymptomizeMobileComponent implements OnInit {
   selectPart(bodyPart) {
     this.bodyPart = bodyPart;
 
-    let step1Text: any = document.getElementById("step-2").firstChild;
-    step1Text.innerText = this.dictionary[this.bodyPart];
     this.updateTutorial(3);
-
+    let currentLocation: any = document.getElementById("current-location");
+    currentLocation.innerText = this.dictionary[this.bodyPart];
     this.layer = 3;
     this.setupSymptoms();
     setTimeout(() => {
@@ -262,8 +262,7 @@ export class SymptomizeMobileComponent implements OnInit {
             document.getElementById("human-placeholder-image").style.transform =
               "";
           }, 50);
-          let step1Text: any = document.getElementById("step-1").firstChild;
-          step1Text.innerText = "Klicke auf ein Körperbereich";
+
           setTimeout(() => {
             this.layer = 1;
           }, 500);
@@ -280,8 +279,9 @@ export class SymptomizeMobileComponent implements OnInit {
           "px, " +
           this.bodyAreaCoords[this.bodyArea].y +
           "px)";
-        let step1Text: any = document.getElementById("step-2").firstChild;
-        step1Text.innerText = "Klicke auf ein Körperteil";
+        console.log(this.bodyArea);
+        let currentLocation: any = document.getElementById("current-location");
+        currentLocation.innerText = this.dictionary[this.bodyArea];
         setTimeout(() => {
           this.layer = 2;
 
@@ -298,25 +298,30 @@ export class SymptomizeMobileComponent implements OnInit {
   }
 
   updateTutorial(step: number) {
-    let pos1 = "";
-    let pos2 = "80px";
-    let pos3 = "160px";
-
     switch (step) {
       case 1:
         document.getElementById("tutorial").style.animationPlayState =
           "running";
-        document.getElementById("step-text").innerText =
-          "Tippe auf ein Körperbereich";
+        document.getElementById("step-text").innerHTML =
+          "Tippe auf ein<br>Körperbereich";
+        document.getElementById("header").style.opacity = "";
+        document.getElementById("header").style.pointerEvents = "";
+
         break;
       case 2:
         document.getElementById("tutorial").style.animationPlayState =
           "running";
-        document.getElementById("step-text").innerText =
-          "Tippe auf ein Körperteil";
+        document.getElementById("step-text").innerHTML =
+          "Tippe auf ein<br>Körperteil";
+        document.getElementById("header").style.opacity = "1";
+        document.getElementById("header").style.pointerEvents = "auto";
+
         break;
       case 3:
-        document.getElementById("current-step").style.top = pos3;
+        document.getElementById("tutorial").style.animationPlayState =
+          "running";
+        document.getElementById("step-text").innerHTML =
+          "Wähle deine Symptome aus";
         break;
     }
   }

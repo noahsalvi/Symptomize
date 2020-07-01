@@ -16,7 +16,7 @@ export class QuittungComponent implements OnInit {
   public urlLabeltext =
     "Hier wird der Link erscheinen, wenn sie auf absenden clicken";
   public showcopy = false;
-  private dictionary;
+  public dictionary;
 
   symptoms = [];
 
@@ -47,8 +47,8 @@ export class QuittungComponent implements OnInit {
       console.log(this.symptoms);
 
       if (this.symptoms.length === 0) {
-        alert('Es sind keine Körperteile ausgewählt');
-        this.router.navigate(['/symp']);
+        alert("Es sind keine Körperteile ausgewählt");
+        this.router.navigate(["/symp"]);
       }
     }
   }
