@@ -86,7 +86,6 @@ export class QuittungComponent implements OnInit {
     document.body.removeChild(selBox);
   }
   goBack() {
-    alert("back");
     this.location.back();
   }
   giveURL(url: Text) {
