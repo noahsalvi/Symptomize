@@ -38,9 +38,9 @@ export class QuittungComponent implements OnInit {
         navigator.userAgent
       )
     ) {
-      this.router.navigate(["/symp-m"]);
+      this.router.navigate(["/profil/erfassen-m"]);
     } else {
-      this.router.navigate(["/symp"]);
+      this.router.navigate(["/profil/erfassen"]);
     }
   }
   clickEdit(id: number) {
@@ -48,9 +48,9 @@ export class QuittungComponent implements OnInit {
   }
   clickDelete(kt: string) {
     console.log(kt);
-    if (confirm('Willst du ' + kt + ' wirklich löschen?')) {
-      const index = this.symptoms.findIndex(obj => obj.bodyPart === kt);
-      console.log('index' + index);
+    if (confirm("Willst du " + kt + " wirklich löschen?")) {
+      const index = this.symptoms.findIndex((obj) => obj.bodyPart === kt);
+      console.log("index" + index);
       this.symptoms.splice(index, 1);
       console.log(this.symptoms);
 

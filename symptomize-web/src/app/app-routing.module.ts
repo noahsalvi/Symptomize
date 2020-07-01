@@ -10,15 +10,15 @@ import { SymptomizeMobileComponent } from "./symptomize-mobile/symptomize-mobile
 const routes: Routes = [
   { path: "", component: LandingComponent },
   {
-    path: "symp",
+    path: "profil/erfassen",
     component: SymptomizeComponent,
   },
   {
-    path: "symp-m",
+    path: "profil/erfassen-m",
     component: SymptomizeMobileComponent,
   },
   {
-    path: "quittung",
+    path: "profil",
     component: QuittungComponent,
   },
   {

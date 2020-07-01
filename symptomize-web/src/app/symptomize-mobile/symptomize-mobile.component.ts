@@ -10,49 +10,7 @@ import { Router } from "@angular/router";
 })
 export class SymptomizeMobileComponent implements OnInit {
   symptoms = ["Bluten", "Stechen", "Schwellung", "Blau"];
-  bodyAreaCoords = {
-    head: {
-      x: 0,
-      y: 390,
-      bodyParts: {},
-    },
-    torso: {
-      x: 0,
-      y: 130,
-    },
-    "right-arm": {
-      x: 120,
-      y: 100,
-    },
-    "right-leg": {
-      x: 70,
-      y: -230,
-    },
-    "left-leg": {
-      x: -70,
-      y: -230,
-    },
-    "left-arm": {
-      x: -120,
-      y: 100,
-    },
-    "right-hand": {
-      x: 160,
-      y: -40,
-    },
-    "right-forearm": {
-      x: 160,
-      y: -10,
-    },
-    "right-upper-arm": {
-      x: 16,
-      y: 34,
-    },
-    "right-shoulder": {
-      x: 43,
-      y: 43,
-    },
-  };
+  bodyAreaCoords;
   dictionary;
   zoomHeight = 957;
   bodyArea: string;
@@ -82,6 +40,8 @@ export class SymptomizeMobileComponent implements OnInit {
   };
 
   constructor(private symptomService: SymptomService, private router: Router) {
+    this.bodyAreaCoords = symptomService.bodyCoords;
+
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit credit https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
     let vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
@@ -161,9 +121,9 @@ export class SymptomizeMobileComponent implements OnInit {
         document.getElementById("human-placeholder-3").style.opacity = "1";
         document.getElementById("human-placeholder-image-3").style.transform =
           "translate(" +
-          this.bodyAreaCoords[this.bodyArea].bodyParts[this.bodyPart].x +
+          this.bodyAreaCoords[this.bodyPart].x +
           "px, " +
-          this.bodyAreaCoords[this.bodyArea].bodyParts[this.bodyPart].y +
+          this.bodyAreaCoords[this.bodyPart].y +
           "px)";
         document.getElementById("statesMap-2").style.zIndex = "-10";
       }, 50);
@@ -249,7 +209,7 @@ export class SymptomizeMobileComponent implements OnInit {
       this.symptomService.profile.push(newEntry);
       console.log(newEntry);
       console.log(this.symptomService.profile);
-      this.router.navigate(["quittung"]);
+      this.router.navigate(["profil"]);
     } else {
       this.validateContinuation();
     }

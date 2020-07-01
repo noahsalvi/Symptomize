@@ -105,7 +105,9 @@ export class SymptomizeComponent implements OnInit {
     shadowRadius: 10,
   };
 
-  constructor(private symptomService: SymptomService, private router: Router) {}
+  constructor(private symptomService: SymptomService, private router: Router) {
+    // this.bodyAreaCoords = symptomService.bodyCoords;
+  }
 
   ngOnInit() {
     this.dictionary = this.symptomService.dictionary;
@@ -263,7 +265,7 @@ export class SymptomizeComponent implements OnInit {
       this.symptomService.profile.push(newEntry);
       console.log(newEntry);
       console.log(this.symptomService.profile);
-      this.router.navigate(["quittung"]);
+      this.router.navigate(["profil"]);
     } else {
       this.validateContinuation();
     }

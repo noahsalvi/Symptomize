@@ -30,12 +30,11 @@
     margin-left: auto;
     margin-right: auto;
 
-
     .Symptome {
       text-align: left;
       margin-top: 5%;
 
-      .koerperarea{
+      .koerperarea {
         text-decoration: underline;
         color: $green;
       }
@@ -103,9 +102,8 @@
       margin-top: 5px;
       font-size: 20px;
     }
-    .rightside{
-
-    margin-bottom: 110px;
+    .rightside {
+      margin-bottom: 110px;
     }
   }
   .urllabel {
@@ -149,7 +147,8 @@
     margin: auto;
 
     .logo {
-      width: 600px;
+      width: 400px;
+      cursor: pointer;
     }
   }
 
@@ -171,7 +170,7 @@
         text-align: left;
         margin-top: 5%;
 
-        .koerperarea{
+        .koerperarea {
           text-decoration: underline;
           color: $green;
         }
@@ -270,7 +269,6 @@
     position: fixed;
     width: 100%;
     bottom: 0;
-
   }
 }
 .gray-text {

@@ -1,7 +1,11 @@
 @import "src/assets/colors.scss";
 @media (max-width: 630px) {
   .responsive-helper {
-    height: calc(100vh - 90px);
+    // height: calc(100vh - 90px);
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+    height: calc(calc(var(--vh, 1vh) * 100) - 90px);
+    display: flex;
+    flex-direction: column;
   }
 
   header {
@@ -18,10 +22,18 @@
   }
 
   main {
+    flex-grow: 2;
     display: flex;
     flex-direction: column;
     justify-self: center;
     text-align: center;
+
+    .parentside {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
     p {
       font-size: 3vh;
       padding: 10px 40px 0 40px;
@@ -70,13 +82,15 @@
     margin: auto;
 
     .logo {
-      width: 600px;
+      width: 400px;
     }
   }
 
   main {
     text-align: center;
-    width: 80%;
+    width: 60%;
+    min-width: 650px;
+
     margin-left: auto;
     margin-right: auto;
 
@@ -87,29 +101,31 @@
     .parentside {
       display: flex;
       justify-content: space-between;
-      width: 75%;
       margin-left: auto;
       margin-right: auto;
+      padding: 40px 80px;
       background: $background;
       border-radius: 14px;
 
       .rightside {
-        height: 100%;
-
         .img-container-gross {
           display: flex;
           justify-content: space-between;
-          height: 100%;
           background-color: none;
+          height: 450px;
+
+          img {
+            height: 100%;
+          }
         }
       }
 
       .leftside {
-        padding-top: 10%;
         height: 100%;
+        margin-top: 30px;
 
         p {
-          font-size: 200%;
+          font-size: 24px;
           display: flex;
           width: 75%;
           margin-left: auto;
@@ -117,6 +133,7 @@
         }
 
         button {
+          cursor: pointer;
           margin-left: auto;
           margin-right: auto;
           margin-top: 20px;
@@ -124,7 +141,7 @@
           background: $green;
           border: none;
           padding: 10px 20px;
-          font-size: 24px;
+          font-size: 18px;
           display: flex;
         }
         button:hover {
@@ -159,6 +176,7 @@
   color: rgb(219, 219, 219);
 }
 .Impressum {
+  cursor: pointer;
   text-decoration: underline;
   text-align: center;
   float: right;
