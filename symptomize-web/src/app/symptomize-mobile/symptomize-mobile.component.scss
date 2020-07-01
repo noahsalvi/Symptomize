@@ -197,6 +197,8 @@ main {
 }
 
 #human-placeholder {
+  position: absolute;
+  opacity: 0;
   width: 245px;
   //245.4 more accurate
   height: 550px;
@@ -207,7 +209,9 @@ main {
 
 #human-placeholder-image {
   height: 100%;
-  transition: all 0.5s;
+  &.transition-on {
+    transition: all 0.5s;
+  }
 }
 
 #human-placeholder-3 {
