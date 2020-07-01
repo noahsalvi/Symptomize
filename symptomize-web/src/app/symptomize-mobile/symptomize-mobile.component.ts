@@ -23,12 +23,6 @@ export class SymptomizeMobileComponent implements OnInit {
     "right-arm": {
       x: 120,
       y: 100,
-      bodyParts: {
-        hand: {
-          x: 160,
-          y: -40,
-        },
-      },
     },
     "right-leg": {
       x: 70,
@@ -41,6 +35,22 @@ export class SymptomizeMobileComponent implements OnInit {
     "left-arm": {
       x: -120,
       y: 100,
+    },
+    "right-hand": {
+      x: 160,
+      y: -40,
+    },
+    "right-forearm": {
+      x: 160,
+      y: -10,
+    },
+    "right-upper-arm": {
+      x: 16,
+      y: 34,
+    },
+    "right-shoulder": {
+      x: 43,
+      y: 43,
     },
   };
   dictionary;

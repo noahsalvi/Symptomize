@@ -23,12 +23,6 @@ export class SymptomizeComponent implements OnInit {
     "right-arm": {
       x: 120,
       y: 100,
-      bodyParts: {
-        hand: {
-          x: 160,
-          y: -40,
-        },
-      },
     },
     "right-leg": {
       x: 70,
@@ -40,6 +34,46 @@ export class SymptomizeComponent implements OnInit {
     },
     "left-arm": {
       x: -120,
+      y: 100,
+    },
+    "right-hand": {
+      x: 160,
+      y: -40,
+    },
+    "right-forearm": {
+      x: 150,
+      y: 50,
+    },
+    "right-upper-arm": {
+      x: 130,
+      y: 180,
+    },
+    "right-shoulder": {
+      x: 120,
+      y: 260,
+    },
+    "right-elbow": {
+      x: 140,
+      y: 100,
+    },
+    "left-hand": {
+      x: -160,
+      y: -40,
+    },
+    "left-forearm": {
+      x: -130,
+      y: 50,
+    },
+    "left-upper-arm": {
+      x: -110,
+      y: 180,
+    },
+    "left-shoulder": {
+      x: -100,
+      y: 260,
+    },
+    "left-elbow": {
+      x: -100,
       y: 100,
     },
   };
@@ -141,9 +175,9 @@ export class SymptomizeComponent implements OnInit {
         document.getElementById("human-placeholder-3").style.opacity = "1";
         document.getElementById("human-placeholder-image-3").style.transform =
           "translate(" +
-          this.bodyAreaCoords[this.bodyArea].bodyParts[this.bodyPart].x +
+          this.bodyAreaCoords[this.bodyPart].x +
           "px, " +
-          this.bodyAreaCoords[this.bodyArea].bodyParts[this.bodyPart].y +
+          this.bodyAreaCoords[this.bodyPart].y +
           "px)";
         document.getElementById("statesMap-2").style.zIndex = "-10";
       }, 50);

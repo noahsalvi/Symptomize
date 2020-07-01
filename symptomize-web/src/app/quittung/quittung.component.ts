@@ -33,7 +33,15 @@ export class QuittungComponent implements OnInit {
   ngOnInit() {}
 
   clickPlus() {
-    this.router.navigate(["/symp"]);
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      this.router.navigate(["/symp-m"]);
+    } else {
+      this.router.navigate(["/symp"]);
+    }
   }
   clickEdit(id: number) {
     alert(id);
