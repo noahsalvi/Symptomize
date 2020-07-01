@@ -118,6 +118,7 @@ main {
     top: 50%;
 
     #symptom-box {
+      z-index: 100;
       background: black;
       margin-top: 50px;
       border-radius: 10px;
@@ -156,7 +157,6 @@ main {
     }
 
     #continue-button {
-      z-index: 100;
       display: none;
       margin-left: 115px;
       margin-top: 15px;
