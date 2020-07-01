@@ -187,6 +187,7 @@ export class SymptomizeMobileComponent implements OnInit {
   }
 
   continue() {
+    console.log("continue ran");
     let applicableSymptoms = [];
 
     let symptomBox = document.getElementById("symptom-box");
@@ -196,6 +197,7 @@ export class SymptomizeMobileComponent implements OnInit {
     symptoms.forEach((symptom) => {
       let symptomChecked = symptom.children[0].children[0].checked;
       if (symptomChecked) {
+        console.log("beinhaltet symptom");
         applicableSymptoms.push(symptom.innerText);
       }
     });
@@ -210,7 +212,9 @@ export class SymptomizeMobileComponent implements OnInit {
       console.log(newEntry);
       console.log(this.symptomService.profile);
       this.router.navigate(["profil"]);
+      console.log("sollte navigiert sein");
     } else {
+      console.log("hat nicht geklappt");
       this.validateContinuation();
     }
   }
