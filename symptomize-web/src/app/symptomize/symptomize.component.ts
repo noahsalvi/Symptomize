@@ -10,73 +10,7 @@ import { Router } from "@angular/router";
 })
 export class SymptomizeComponent implements OnInit {
   symptoms = ["Bluten", "Stechen", "Schwellung", "Blau"];
-  bodyAreaCoords = {
-    head: {
-      x: 0,
-      y: 390,
-      bodyParts: {},
-    },
-    torso: {
-      x: 0,
-      y: 130,
-    },
-    "right-arm": {
-      x: 120,
-      y: 100,
-    },
-    "right-leg": {
-      x: 70,
-      y: -230,
-    },
-    "left-leg": {
-      x: -70,
-      y: -230,
-    },
-    "left-arm": {
-      x: -120,
-      y: 100,
-    },
-    "right-hand": {
-      x: 160,
-      y: -40,
-    },
-    "right-forearm": {
-      x: 150,
-      y: 50,
-    },
-    "right-upper-arm": {
-      x: 130,
-      y: 180,
-    },
-    "right-shoulder": {
-      x: 120,
-      y: 260,
-    },
-    "right-elbow": {
-      x: 140,
-      y: 100,
-    },
-    "left-hand": {
-      x: -160,
-      y: -40,
-    },
-    "left-forearm": {
-      x: -130,
-      y: 50,
-    },
-    "left-upper-arm": {
-      x: -110,
-      y: 180,
-    },
-    "left-shoulder": {
-      x: -100,
-      y: 260,
-    },
-    "left-elbow": {
-      x: -100,
-      y: 100,
-    },
-  };
+  bodyAreaCoords;
   dictionary;
   zoomHeight = 957;
   bodyArea: string;
@@ -106,7 +40,7 @@ export class SymptomizeComponent implements OnInit {
   };
 
   constructor(private symptomService: SymptomService, private router: Router) {
-    // this.bodyAreaCoords = symptomService.bodyCoords;
+    this.bodyAreaCoords = symptomService.bodyCoords;
   }
 
   ngOnInit() {
