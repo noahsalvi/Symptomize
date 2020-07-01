@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Configuration
 public class Config {
-    @Bean
+    @Bean //Quelle: https://stackoverflow.com/questions/38516667/springboot-angular2-how-to-handle-html5-urls
     ErrorViewResolver supportPathBasedLocationStrategyWithoutHashes() {
         return new ErrorViewResolver() {
             @Override
