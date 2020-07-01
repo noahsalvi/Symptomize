@@ -30,7 +30,7 @@ public class ProfilRepositoryTest {
         /*Test data retrieval*/
         Profil profila = profilRepository.findById(2);
         assertNotNull(profila);
-        assertEquals("Fuss : Bluten", profila.getSymptome());
+        assertEquals("Fuss : Bluten", profila.getSymptoms());
         /*Get all products, list should only have two*/
         Iterable<Profil> profils = profilRepository.findAll();
         int count = 0;

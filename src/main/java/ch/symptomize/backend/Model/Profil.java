@@ -8,7 +8,8 @@ public class Profil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
-    private String Symptome;
+    @Column(columnDefinition="TEXT")
+    private String Symptoms;
 
     public Profil(){
     }
@@ -18,16 +19,16 @@ public class Profil {
     }
 
     public Profil(String s){
-        Symptome=s;
+        Symptoms=s;
     }
 
-    public String getSymptome() {
-        return Symptome;
+    public String getSymptoms() {
+        return Symptoms;
     }
 
 
     public void setSymptome(String symptome) {
-        Symptome = symptome;
+        Symptoms = symptome;
     }
 
 }
