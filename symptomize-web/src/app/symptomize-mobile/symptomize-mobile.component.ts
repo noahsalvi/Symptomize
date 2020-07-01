@@ -9,7 +9,16 @@ import { Router } from "@angular/router";
   encapsulation: ViewEncapsulation.None,
 })
 export class SymptomizeMobileComponent implements OnInit {
-  symptoms = ["leichtes Bluten", "Stechen", "Schwellung", "Starkes Bluten", "Blau", "Verbrennung", "Aufgeschürft", "schmerzen"];
+  symptoms = [
+    "leichtes Bluten",
+    "Stechen",
+    "Schwellung",
+    "Starkes Bluten",
+    "Blau",
+    "Verbrennung",
+    "Aufgeschürft",
+    "schmerzen",
+  ];
   bodyAreaCoords;
   dictionary;
   zoomHeight = 957;
@@ -147,7 +156,7 @@ export class SymptomizeMobileComponent implements OnInit {
         symptom +
         "<input type='checkbox'/></label></div>";
 
-      if (counter == 3) {
+      if (counter == 2) {
         newHtml += "</div>";
         counter = 0;
       }
