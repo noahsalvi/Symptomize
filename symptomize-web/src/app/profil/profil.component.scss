@@ -23,6 +23,9 @@
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+    .leftside{
+      margin-bottom: 100px;
+    }
 
     .Symptome {
       text-align: left;
@@ -59,6 +62,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+
+    position: fixed;
+    bottom: 0;
   }
   .rightside{
     display: none;
@@ -91,6 +98,7 @@
 
     .leftside {
 
+      margin-bottom: 100px;
       width: 100%;
       .Symptome {
         text-align: left;
@@ -132,6 +140,10 @@
     padding-left: 3%;
     padding-right: 3%;
     margin-bottom: 0;
+
+    position: fixed;
+    width: 100%;
+    bottom: 0;
   }
 }
 .gray-text {
