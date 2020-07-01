@@ -69,11 +69,9 @@ main {
 
   .tutorial-section {
     flex-grow: 2;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
     width: 100%;
     //   display: flex;
     //   align-items: center;
@@ -114,6 +112,7 @@ main {
   }
 
   .symptom-section {
+    z-index: 100;
     position: absolute;
     top: 50%;
 
