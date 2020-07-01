@@ -67,7 +67,7 @@ export class QuittungComponent implements OnInit {
     }
   }
   absenden() {
-    const url = "http://localhost:8080/saveProfil";
+    const url = "/saveProfil";
     if (confirm("Bist du sicher, dass du dein Profil absenden willst?")) {
       this.http
         .post<Observable<Text>>(url, {
