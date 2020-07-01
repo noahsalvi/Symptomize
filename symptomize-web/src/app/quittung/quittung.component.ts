@@ -10,7 +10,6 @@ import { SymptomService } from "../symptom.service";
   selector: "app-quittung",
   templateUrl: "./quittung.component.html",
   styleUrls: ["./quittung.component.scss"],
-  encapsulation: ViewEncapsulation.None,
 })
 export class QuittungComponent implements OnInit {
   public URLoutput;
@@ -91,8 +90,8 @@ export class QuittungComponent implements OnInit {
     document.body.removeChild(selBox);
   }
   goBack() {
-    // this.location.back();
-    this.router.navigate(["/profil/erfassen-m"]);
+    this.location.back();
+    // this.router.navigate(["/profil/erfassen-m"]);
   }
   giveURL(url: Text) {
     this.urlLabeltext1 = "http://localhost:8080";
