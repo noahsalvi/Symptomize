@@ -8,7 +8,6 @@ import { SymptomizeComponent } from "./symptomize/symptomize.component";
 import { QuittungComponent } from "./quittung/quittung.component";
 import { MaphilightModule } from "ng-maphilight";
 import { ImpressumComponent } from "./impressum/impressum.component";
-import { ProfilComponent } from "./profil/profil.component";
 import { SymptomizeMobileComponent } from './symptomize-mobile/symptomize-mobile.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { SymptomizeMobileComponent } from './symptomize-mobile/symptomize-mobile
     QuittungComponent,
     QuittungComponent,
     ImpressumComponent,
-    ProfilComponent,
     SymptomizeMobileComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, MaphilightModule],

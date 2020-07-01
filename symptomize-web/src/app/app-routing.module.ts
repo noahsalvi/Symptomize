@@ -1,5 +1,4 @@
 import { HttpClientModule } from "@angular/common/http";
-import { ProfilComponent } from "./profil/profil.component";
 import { ImpressumComponent } from "./impressum/impressum.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
