@@ -73,6 +73,8 @@
 @media (min-width: 630px) {
   .responsive-helper {
     height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
   }
   header {
     padding-top: 30px;
@@ -87,12 +89,16 @@
   }
 
   main {
+    flex-grow: 2;
     text-align: center;
     width: 60%;
     min-width: 650px;
 
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .img-container {
       display: none;
