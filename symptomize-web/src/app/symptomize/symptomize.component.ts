@@ -263,8 +263,6 @@ export class SymptomizeComponent implements OnInit {
         symptoms: applicableSymptoms,
       };
       this.symptomService.profile.push(newEntry);
-      console.log(newEntry);
-      console.log(this.symptomService.profile);
       this.router.navigate(["profil"]);
     } else {
       this.validateContinuation();

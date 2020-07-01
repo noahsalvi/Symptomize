@@ -207,8 +207,6 @@ export class SymptomizeMobileComponent implements OnInit {
         symptoms: applicableSymptoms,
       };
       this.symptomService.profile.push(newEntry);
-      console.log(newEntry);
-      console.log(this.symptomService.profile);
       this.router.navigate(["profil"]);
     } else {
       this.validateContinuation();
@@ -257,7 +255,6 @@ export class SymptomizeMobileComponent implements OnInit {
           "px, " +
           this.bodyAreaCoords[this.bodyArea].y +
           "px)";
-        console.log(this.bodyArea);
         let currentLocation: any = document.getElementById("current-location");
         currentLocation.innerText = this.dictionary[this.bodyArea];
         setTimeout(() => {
