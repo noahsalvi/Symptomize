@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { Router, RouterLink } from "@angular/router";
 import { Location } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
@@ -13,8 +13,9 @@ import { SymptomService } from "../symptom.service";
 })
 export class QuittungComponent implements OnInit {
   public URLoutput;
-  public urlLabeltext =
+  public urlLabeltext1 =
     "Hier wird der Link erscheinen, wenn sie auf absenden clicken";
+  public urlLabeltext2;
   public showcopy = false;
   public dictionary;
 
@@ -68,6 +69,8 @@ export class QuittungComponent implements OnInit {
           this.URLoutput = output;
           console.log(this.URLoutput);
           this.giveURL(this.URLoutput);
+          document.getElementById("text").style.minWidth = "165px";
+
           this.showcopy = true;
           document.getElementById("absenden-button").className = "done";
         });
@@ -88,8 +91,10 @@ export class QuittungComponent implements OnInit {
   }
   goBack() {
     this.location.back();
+    // this.router.navigate(["/profil/erfassen-m"]);
   }
   giveURL(url: Text) {
-    this.urlLabeltext = "http://localhost:8080/profile/" + url;
+    this.urlLabeltext1 = "http://localhost:8080";
+    this.urlLabeltext2 = "/profile/" + url;
   }
 }

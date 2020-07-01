@@ -9,7 +9,20 @@ import { Router } from "@angular/router";
   encapsulation: ViewEncapsulation.None,
 })
 export class SymptomizeComponent implements OnInit {
+<<<<<<< HEAD
   symptoms = ["leichtes Bluten", "Stechen", "Schwellung", "Starkes Bluten", "Blau", "Verbrennung", "Aufgeschürft", "schmerzen"];
+=======
+  symptoms = [
+    "leichtes Bluten",
+    "Starkes Bluten",
+    "Stechen",
+    "Schwellung",
+    "Blau",
+    "Verbrennung",
+    "Aufgeschürft",
+    "schmerzen",
+  ];
+>>>>>>> fceb2f2da5eb79159fd8718d5bdaaf72791966a8
   bodyAreaCoords;
   dictionary;
   zoomHeight = 957;

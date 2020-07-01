@@ -4,7 +4,11 @@
       <img class="logo" src="assets/Symptomize.svg" alt="" (click)="goBack()" />
     </div>
     <div class="handy-head">
-      <img src="assets/arrow-left-solid.svg" class="icon" (click)="goBack()" />
+      <img
+        src="assets/arrow-left-solid.svg"
+        class="icon arrow"
+        (click)="goBack()"
+      />
       <h1>Profil</h1>
     </div>
   </header>
@@ -38,8 +42,12 @@
       <div class="abgrenzung-hinzu"></div>
       <button id="absenden-button" (click)="absenden()">Absenden</button>
       <div class="urllabel">
-        <label>{{ urlLabeltext }}</label>
-        <button *ngIf="showcopy" (click)="clickCopy(urlLabeltext)" class="copy">
+        <div id="text">{{ urlLabeltext1 }}<br />{{ urlLabeltext2 }}</div>
+        <button
+          *ngIf="showcopy"
+          (click)="clickCopy(urlLabeltext1 + urlLabeltext2)"
+          class="copy"
+        >
           Copy
         </button>
       </div>
