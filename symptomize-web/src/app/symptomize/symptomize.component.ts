@@ -10,14 +10,14 @@ import { Router } from "@angular/router";
 })
 export class SymptomizeComponent implements OnInit {
   symptoms = [
-    "leichtes Bluten",
+    "Leichtes Bluten",
     "Starkes Bluten",
     "Stechen",
     "Schwellung",
     "Blau",
     "Verbrennung",
     "Aufgeschürft",
-    "schmerzen",
+    "Drücken",
   ];
   bodyAreaCoords;
   dictionary;
