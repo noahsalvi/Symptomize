@@ -17,9 +17,9 @@ export class LandingComponent implements OnInit {
         navigator.userAgent
       )
     ) {
-      this.router.navigate(["symp-m"]);
+      this.router.navigate(["profil/erfassen-m"]);
     } else {
-      this.router.navigate(["symp"]);
+      this.router.navigate(["profil/erfassen"]);
     }
   }
 }
