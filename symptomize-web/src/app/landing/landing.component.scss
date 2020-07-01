@@ -3,7 +3,9 @@
   .responsive-helper {
     // height: calc(100vh - 90px);
     height: 100vh; /* Fallback for browsers that do not support Custom Properties https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
-    height: calc(var(--vh, 1vh) * 100 - 90);
+    height: calc(calc(var(--vh, 1vh) * 100) - 90px);
+    display: flex;
+    flex-direction: column;
   }
 
   header {
@@ -20,10 +22,18 @@
   }
 
   main {
+    flex-grow: 2;
     display: flex;
     flex-direction: column;
     justify-self: center;
     text-align: center;
+
+    .parentside {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
     p {
       font-size: 3vh;
       padding: 10px 40px 0 40px;
