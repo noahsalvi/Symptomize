@@ -43,9 +43,6 @@ export class QuittungComponent implements OnInit {
       this.router.navigate(["/profil/erfassen"]);
     }
   }
-  clickEdit(id: number) {
-    alert(id);
-  }
   clickDelete(kt: string) {
     console.log(kt);
     if (confirm("Willst du " + kt + " wirklich löschen?")) {
@@ -56,7 +53,7 @@ export class QuittungComponent implements OnInit {
 
       if (this.symptoms.length === 0) {
         alert("Es sind keine Körperteile ausgewählt");
-        this.router.navigate(["/symp"]);
+        this.router.navigate(["/profil/erfassen"]);
       }
     }
   }
