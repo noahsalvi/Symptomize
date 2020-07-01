@@ -13,9 +13,12 @@
     height: 70px;
     display: flex;
     align-items: center;
+    position: relative;
     h1 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       flex-grow: 2;
-      margin-right: 35px;
       font-size: 20px;
     }
     .icon {
@@ -34,6 +37,7 @@
       position: initial;
       top: 0;
       height: 30px;
+      width: 30px;
       z-index: 5;
     }
   }
@@ -44,7 +48,7 @@
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
+    margin-top: 40px;
 
     .leftside {
       width: 100%;
@@ -108,6 +112,7 @@
       }
     }
     button {
+      cursor: pointer;
       margin-left: auto;
       margin-right: auto;
       margin-top: 100px;
@@ -117,13 +122,20 @@
       padding: 10px 20px;
       font-size: 24px;
       display: flex;
-    }
-    button:hover {
-      background: $green-hover;
+
+      &.done {
+        pointer-events: none;
+        filter: contrast(0.5);
+      }
     }
     .copy {
-      margin-top: 5px;
-      font-size: 20px;
+      margin-top: 8px;
+      font-size: 14px;
+      padding: 8px 12px;
+
+      &:active {
+        transform: scale(1.06) !important;
+      }
     }
     .rightside {
       margin-bottom: 110px;
@@ -133,14 +145,23 @@
     height: 20px;
     width: 100%;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      width: 200px;
+    }
   }
   .abgrenzung {
     height: 5px;
+    border-radius: 5px;
     background-color: $green;
     margin-bottom: 5%;
   }
 
   .abgrenzung-hinzu {
+    border-radius: 5px;
     height: 5px;
     background-color: $green;
     margin-bottom: 5%;
