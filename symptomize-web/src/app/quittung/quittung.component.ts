@@ -31,7 +31,9 @@ export class QuittungComponent implements OnInit {
     this.dictionary = this.symptomService.dictionary;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.symptomService.profile);
+  }
 
   clickPlus() {
     if (

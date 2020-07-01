@@ -8,7 +8,7 @@ public class Profil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
-    @Column(columnDefinition="TEXT")
+    @Column(columnDefinition="varchar(2280)")
     private String Symptoms;
 
     public Profil(){
